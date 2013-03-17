@@ -3,12 +3,12 @@ var broadway = require('broadway'),
 	path = require('path');
 
 var pathToDropbox = path.join(__dirname,'../../Dropbox/blog'),
-	siteSections = [ 'Recipes' ];
+	siteSections = { 'Recipes' : 'Recipes' };
 
 app.use(require('./plugins/watcher'), { path : pathToDropbox, recursive : true });
 app.use(require('./plugins/express'));
 app.use(require('./plugins/blog-sections'), { base : pathToDropbox, sections : siteSections });
-// app.use(require('./plugins/routing'));
+app.use(require('./plugins/router'), { sections : siteSections });
 
 
 app.init(function(err) {

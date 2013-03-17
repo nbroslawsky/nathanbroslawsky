@@ -1,0 +1,6 @@
+div.main
+	h1 #{section.title}
+	ul
+		for page in section.pages
+			li
+				a(href=page.url + '/') #{page.title}

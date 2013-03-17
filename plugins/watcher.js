@@ -9,7 +9,7 @@ exports.init = function(done) {
 	var app = this;
 	app.watcher.watch(function(modifiedFiles) {
 		app.emit('files-changed', modifiedFiles);
-	}, 6000);
+	}, 5000);
 
 	done();
 };
