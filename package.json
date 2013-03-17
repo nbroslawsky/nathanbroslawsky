@@ -1,0 +1,14 @@
+{
+	"name" : "tanychef.com",
+	"version" : "0.0.1",
+	"author" : "Nathan Broslawsky <nathan.broslawsky@nsfive.com>",
+	"scripts" : {
+		"start" : "supervisor ./server.js"
+	},
+	"main" : "./index.js",
+	"dependencies" : {
+		"express": "3.x",
+		"async": "0.2.x",
+		"broadway": "0.2.x"
+	}
+}
