@@ -19,17 +19,3 @@ app.init(function(err) {
 	app.express.listen(80);
 	console.log('Listening on port 80');
 });
-
-
-/*
-
-app.get('/hello.txt', function(req, res){
-	console.log('Hello!');
-	var body = 'Hello World';
-	res.setHeader('Content-Type', 'text/plain');
-	res.setHeader('Content-Length', body.length);
-	res.end(body);
-});
-
-app.listen(80);
-*/

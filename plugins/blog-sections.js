@@ -43,9 +43,6 @@ exports.init = function(done) {
 
 	app.on('files-changed', function(files) {
 
-		console.log('files changed!', files);
-
-
 		var toCompile = Object.keys(app.srcPaths)
 			.filter(function(section) {
 				var sectionPath = app.srcPaths[section],
