@@ -1,5 +1,5 @@
-var path = require('path');
-var appDir = path.join(__dirname, '../app');
+var path = require('path'),
+	appDir = path.join(__dirname, '../app');
 
 exports.attach = function(options) {
 
@@ -7,18 +7,28 @@ exports.attach = function(options) {
 		indexController = require(path.join(appDir, 'controller.index.js')),
 		sectionController = require(path.join(appDir, 'controller.section.js'));
 
-	app.express.get('/', indexController.index.bind(app));
+	app.express.get('/', app.auth, indexController.index.bind(app));
+	app.express.get('/login', indexController.login.bind(app));
+	app.express.get('/authenticate', indexController.authenticate.bind(app));
+
 	app.on('sections-loaded', function() {
+
 		Object.keys(app.sections).forEach(function(section) {
-			app.express.get('/' + section, function(req, res, next) {
-				req.params.section = section;
-				sectionController.index.apply(app, arguments);
-			});
-			app.express.get('/' + section + '/:page', function(req, res, next) {
-				req.params.section = section;
-				sectionController.page.apply(app, arguments);
-			});
+
+			var urlBase = '/' + section,
+				sectionAbsPath = app.sections[section].path,
+				addSectionParam = function(req, res, next) {
+					req.params.section = section;
+					next();
+				};
+
+			app.express.get(new RegExp(urlBase + '/.*'), app.auth, app.static(sectionAbsPath, { urlBase : urlBase }));
+			app.express.get(urlBase, app.auth, addSectionParam, sectionController.index.bind(app));
+			app.express.get(urlBase + '/:page', app.auth, addSectionParam, sectionController.page.bind(app));
 		});
+
+
+
 	});
 };
 

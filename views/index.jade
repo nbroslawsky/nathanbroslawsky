@@ -1,5 +1,6 @@
-div.main
-	ul
-		for sectionData,key in sections
-			li
-				a(href=key + '/') #{sectionData.title}
+extends base
+
+block main
+	for page, pageKey in sections.home.pages
+		div.page-content
+			!= page.html

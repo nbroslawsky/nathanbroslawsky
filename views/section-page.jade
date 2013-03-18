@@ -1,3 +1,8 @@
-div.main
-	h1 #{section.title} > #{page.title}
-	p !{page.html}
+extends base
+
+block main
+	div
+		h1
+			a(href="../") #{section.title}
+			|  > #{page.title}
+		p !{page.html}

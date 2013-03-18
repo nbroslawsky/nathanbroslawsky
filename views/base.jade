@@ -1,0 +1,28 @@
+doctype 5
+html(lang="en")
+	head
+		title Believers and Achievers
+		link(rel='stylesheet', href='/stylesheets/core.css')
+	body
+		div.wrapper.shadow
+			div.header
+				include header
+			ul.main-nav
+				li
+					a(href="recipes/") Recipes
+				li
+					a(href="new-consultants/") New Consultants
+				li
+					a(href="host-coaching/") Host Coaching
+				li
+					a(href="bookings/") Bookings
+				li
+					a(href="fund-raisers/") Fund Raisers
+				li
+					a(href="recruiting/") Recruiting
+
+			div.content.clearfix
+				div.left-rail
+					include left-rail
+				div.right-rail
+					block main

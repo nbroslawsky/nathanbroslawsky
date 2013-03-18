@@ -6,10 +6,12 @@ var path = require('path'),
 exports.attach = function(options) {
 	var app = this;
 
-	app.sectionConfig = Object.keys(options.sections).reduce(function(init, section) {
+	var sections = Object.keys(options.sections);
+	app.sectionConfig = sections.reduce(function(init, section) {
 		init[section] = {
-			absUrl : path.join(options.base, section,'/'),
-			title : options.sections[section]
+			absPath : path.join(options.base, section,'/'),
+			title : section,
+			iterable : options.sections[section]
 		};
 		return init;
 	}, {});
@@ -18,13 +20,17 @@ exports.attach = function(options) {
 
 exports.init = function(done) {
 
+	var postProcessorsToRun = markdownBlog.PostProcessors.imgsrc | markdownBlog.PostProcessors.href;
+
 	var app = this;
 
 	app.on('files-changed', function(files) {
 
+		console.log('files-changed: ', files.join(', '));
+
 		var toCompile = Object.keys(app.sectionConfig)
 			.filter(function(section) {
-				var sectionPath = app.sectionConfig[section].absUrl,
+				var sectionPath = app.sectionConfig[section].absPath,
 					sectionPathLength = sectionPath.length,
 					filesChangedInSection = files.filter(function(file) {
 						return file.substr(0,sectionPath.length) == sectionPath;
@@ -33,9 +39,12 @@ exports.init = function(done) {
 			})
 			.forEach(function(section) {
 
-				markdownBlog.compile(app.sectionConfig[section].absUrl, function(err, mdBlog) {
+				var sectionUrl = markdownBlog.sanitizeUrl(section);
+				markdownBlog.compile(app.sectionConfig[section].absPath, postProcessorsToRun, function(err, mdBlog) {
 					mdBlog.setTitle(app.sectionConfig[section].title);
-					app.sections[section] = mdBlog;
+					mdBlog.setDirectory(sectionUrl);
+					this.replacePlaceholders({'ROOT_PATH' : sectionUrl });
+					app.sections[sectionUrl] = mdBlog;
 				});
 
 			});
@@ -44,16 +53,22 @@ exports.init = function(done) {
 	async.parallel(
 		Object.keys(app.sectionConfig).reduce(function(init, section) {
 
-			var absPath = app.sectionConfig[section].absUrl;
-			init[section.toLowerCase()] = function(cb) {
+			var absPath = app.sectionConfig[section].absPath,
+				sectionUrl = markdownBlog.sanitizeUrl(section);
+
+			app.sectionConfig[section].path = sectionUrl;
+
+			init[sectionUrl] = function(cb) {
 				fs.stat(absPath, function(err, stat) {
 					err = err || (!stat.isDirectory() ? 'not a directory' : undefined);
 					if(err) {
 						return cb(err);
 					}
 
-					markdownBlog.compile(absPath, function(err, mdBlog) {
+					markdownBlog.compile(absPath, postProcessorsToRun, function(err, mdBlog) {
 						mdBlog.setTitle(app.sectionConfig[section].title);
+						mdBlog.setDirectory(sectionUrl);
+						this.replacePlaceholders({'ROOT_PATH' : sectionUrl });
 						cb(err, mdBlog);
 					});
 				});
@@ -65,7 +80,6 @@ exports.init = function(done) {
 
 			app.sections = results;
 			app.emit('sections-loaded');
-
 			done();
 		}
 	);

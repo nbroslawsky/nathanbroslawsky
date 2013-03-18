@@ -2,13 +2,22 @@ var broadway = require('broadway'),
 	app = new broadway.App(),
 	path = require('path');
 
-var pathToDropbox = path.join(__dirname,'../../Dropbox/blog'),
-	siteSections = { 'Recipes' : 'Recipes' };
+var pathToDropbox = path.join(__dirname,'../../Dropbox/tanyachef.com'),
+	siteSections = {
+		'Home' : false,
+		'New Consultants' : true,
+		'Bookings' : true,
+		'Recruiting' : true,
+		'Host Coaching' : true,
+		'Recipes' : true
+	};
 
+app.use(require('./plugins/static'));
 app.use(require('./plugins/watcher'), { path : pathToDropbox, recursive : true });
+app.use(require('./plugins/db'));
 app.use(require('./plugins/express'));
 app.use(require('./plugins/blog-sections'), { base : pathToDropbox, sections : siteSections });
-app.use(require('./plugins/router'), { sections : siteSections });
+app.use(require('./plugins/router'), { base : pathToDropbox, sections : Object.keys(siteSections) });
 
 
 app.init(function(err) {

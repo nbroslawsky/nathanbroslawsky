@@ -7,6 +7,8 @@
 	},
 	"main" : "./index.js",
 	"dependencies" : {
+		"moment": "2.x",
+		"mongodb": "1.2.x",
 		"express": "3.x",
 		"jade": "0.28.x",
 		"async": "0.2.x",
