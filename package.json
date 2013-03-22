@@ -13,6 +13,8 @@
 		"jade": "0.28.x",
 		"async": "0.2.x",
 		"nodemailer": "0.3.x",
+		"markdown-blog" : "git://github.com/nbroslawsky/markdown-blog.git#master",
+		"watcher" : "git://github.com/nbroslawsky/watcher.git#master",
 		"broadway": "0.2.x"
 	}
 }
