@@ -47,8 +47,8 @@ div.wrapper div.header h1 {
 
 div.wrapper div.header div.user-info {
 	position:absolute;
-	top:10px;
-	right:0px;
+	bottom:-20px;
+	right:10px;
 }
 
 div.wrapper ul.main-nav {
@@ -146,6 +146,10 @@ div.wrapper div.content div.right-rail {
 
 div.wrapper div.content div.right-rail div.page-content {
 	border-top:1px solid #333;
+}
+
+div.wrapper div.content div.right-rail div.page-content img {
+	display:block;
 }
 
 div.wrapper div.content div.right-rail div.page-content:first-child {

@@ -3,6 +3,8 @@ extends base
 block main
 	div
 		h1 #{section.title}
+		if !Object.keys(section.pages).length
+			div.come-back-later There is no content here just yet... Please check back soon!
 		ul
 			for page in section.pages
 				li

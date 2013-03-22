@@ -43,7 +43,7 @@ exports.init = function(done) {
 				markdownBlog.compile(app.sectionConfig[section].absPath, postProcessorsToRun, function(err, mdBlog) {
 					mdBlog.setTitle(app.sectionConfig[section].title);
 					mdBlog.setDirectory(sectionUrl);
-					this.replacePlaceholders({'ROOT_PATH' : sectionUrl });
+					this.replacePlaceholders({'ROOT_PATH' : '/'+sectionUrl });
 					app.sections[sectionUrl] = mdBlog;
 				});
 
@@ -68,7 +68,7 @@ exports.init = function(done) {
 					markdownBlog.compile(absPath, postProcessorsToRun, function(err, mdBlog) {
 						mdBlog.setTitle(app.sectionConfig[section].title);
 						mdBlog.setDirectory(sectionUrl);
-						this.replacePlaceholders({'ROOT_PATH' : sectionUrl });
+						this.replacePlaceholders({'ROOT_PATH' : '/'+sectionUrl });
 						cb(err, mdBlog);
 					});
 				});

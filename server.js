@@ -7,6 +7,7 @@ var pathToDropbox = path.join(__dirname,'../../Dropbox/tanyachef.com'),
 		'Home' : false,
 		'New Consultants' : true,
 		'Bookings' : true,
+		'Fundraisers' : true,
 		'Recruiting' : true,
 		'Host Coaching' : true,
 		'Recipes' : true

@@ -20,7 +20,10 @@ exports.attach = function(options) {
 	app.express = express();
 	app.express.set('views',path.join(__dirname, '../views'));
 	app.express.set('view engine', 'jade');
-
+	app.express.use(function(req, res, next) {
+		console.log('Access: ' + req.url);
+		next();
+	});
 	app.express.use(app.static(path.join(__dirname,'../public')));
 	app.express.use(express.bodyParser());
 	app.express.use(express.cookieParser());

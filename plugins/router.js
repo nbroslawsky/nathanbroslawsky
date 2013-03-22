@@ -9,7 +9,7 @@ exports.attach = function(options) {
 
 	app.express.get('/', app.auth, indexController.index.bind(app));
 	app.express.get('/login', indexController.login.bind(app));
-	app.express.get('/authenticate', indexController.authenticate.bind(app));
+	app.express.post('/authenticate', indexController.authenticate.bind(app));
 
 	app.on('sections-loaded', function() {
 
