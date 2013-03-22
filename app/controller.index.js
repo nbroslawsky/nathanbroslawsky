@@ -12,6 +12,7 @@ module.exports = {
 		var reasons = {
 			password_mismatch : "Your passwords did not match. Please use the back button to try again.",
 			no_reset : "We were unable to validate your account. Please try again.",
+			invalid : "Your password or username was incorrect. Please try again.",
 			success : "Your password was successfully changed. Please log in."
 		};
 
@@ -24,7 +25,7 @@ module.exports = {
 		var userManager = new UserManager(this);
 		userManager.authenticate(req.body.email, req.body.password, function(err, user) {
 			if(err) {
-				res.writeHead(302, { 'Location': '/login?go=' + encodeURIComponent(req.body.go) });
+				res.writeHead(302, { 'Location': '/login?reason=invalid&go=' + encodeURIComponent(req.body.go) });
 				res.end();
 			} else {
 				req.session.userId = user._id;
