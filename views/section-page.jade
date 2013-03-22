@@ -2,7 +2,5 @@ extends base
 
 block main
 	div
-		h1
-			a(href="../") #{section.title}
-			|  > #{page.title}
+		h1 #{page.title}
 		div.page-content !{page.html}

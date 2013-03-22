@@ -9,7 +9,13 @@ exports.attach = function(options) {
 
 	app.express.get('/', app.auth, indexController.index.bind(app));
 	app.express.get('/login', indexController.login.bind(app));
+	app.express.get('/forgot-password', indexController.forgotPassword.bind(app));
+	app.express.get('/email-sent', indexController.emailSent.bind(app));
+	app.express.get('/change-password', indexController.changePassword.bind(app));
+
 	app.express.post('/authenticate', indexController.authenticate.bind(app));
+	app.express.post('/send-password', indexController.sendPassword.bind(app));
+	app.express.post('/submit-password-change', indexController.submitPasswordChange.bind(app));
 
 	app.on('sections-loaded', function() {
 

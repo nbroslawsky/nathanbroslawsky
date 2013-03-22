@@ -45,6 +45,10 @@ div.wrapper div.header h1 {
 	/* font-variant:small-caps; */
 }
 
+div.wrapper div.header h1 a {
+	color:#FFFFFF;
+}
+
 div.wrapper div.header div.user-info {
 	position:absolute;
 	bottom:-20px;
@@ -74,6 +78,16 @@ div.wrapper ul.main-nav li:first-child {
 div.wrapper ul.main-nav li a {
 	color:#FFFFFF;
 	font-weight:bold;
+}
+
+div.wrapper div.content a.forgot-password {
+
+}
+
+div.wrapper div.content div.message {
+	width: 275px;
+	margin: 50px auto 50px auto;
+	padding:0 0 0 0;
 }
 
 div.wrapper div.content form.login {

@@ -14,12 +14,13 @@ var pathToDropbox = path.join(__dirname,'../../Dropbox/tanyachef.com'),
 	};
 
 app.use(require('./plugins/static'));
+app.use(require('./plugins/settings'));
+app.use(require('./plugins/email'));
 app.use(require('./plugins/watcher'), { path : pathToDropbox, recursive : true });
 app.use(require('./plugins/db'));
 app.use(require('./plugins/express'));
 app.use(require('./plugins/blog-sections'), { base : pathToDropbox, sections : siteSections });
 app.use(require('./plugins/router'), { base : pathToDropbox, sections : Object.keys(siteSections) });
-
 
 app.init(function(err) {
 	if(err) {

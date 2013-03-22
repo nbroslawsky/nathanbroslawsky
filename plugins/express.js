@@ -27,7 +27,7 @@ exports.attach = function(options) {
 	app.express.use(app.static(path.join(__dirname,'../public')));
 	app.express.use(express.bodyParser());
 	app.express.use(express.cookieParser());
-	app.express.use(express.session({cookie: { path: '/', httpOnly: true, maxAge: null }, secret:'eeuqram'}));
+	app.express.use(express.session({cookie: { path: '/', httpOnly: true, maxAge: null }, secret:app.settings.sessionkey}));
 	app.express.use(function(req, res, next) {
 		if(req.session.userId) {
 			userManager.getUser(req.session.userId, function(err, user) {

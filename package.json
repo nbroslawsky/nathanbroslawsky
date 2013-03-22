@@ -12,6 +12,7 @@
 		"express": "3.x",
 		"jade": "0.28.x",
 		"async": "0.2.x",
+		"nodemailer": "0.3.x",
 		"broadway": "0.2.x"
 	}
 }
