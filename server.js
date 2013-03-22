@@ -2,7 +2,7 @@ var broadway = require('broadway'),
 	app = new broadway.App(),
 	path = require('path');
 
-var pathToDropbox = path.join(__dirname,'/home/nbroslawsky/Dropbox/tanyachef.com'),
+var pathToDropbox = '/home/nbroslawsky/Dropbox/tanyachef.com',
 	siteSections = {
 		'Home' : false,
 		'New Consultants' : true,
