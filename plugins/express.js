@@ -1,21 +1,9 @@
 var express = require('express'),
 	path = require('path'),
-	moment = require('moment'),
-	UserManager = require('../app/data/user.js');
+	moment = require('moment');
 
 exports.attach = function(options) {
 	var app = this;
-
-	app.auth = function(req, res, next) {
-		if(!req.session.userId) {
-			res.writeHead(302, { 'Location': '/login?go=' + encodeURIComponent(req.url) });
-			res.end();
-			return;
-		}
-		next();
-	};
-
-	var userManager = new UserManager(app);
 
 	app.express = express();
 	app.express.set('views',path.join(__dirname, '../views'));
@@ -28,21 +16,6 @@ exports.attach = function(options) {
 	app.express.use(express.bodyParser());
 	app.express.use(express.cookieParser());
 	app.express.use(express.session({cookie: { path: '/', httpOnly: true, maxAge: null }, secret:app.settings.sessionkey}));
-	app.express.use(function(req, res, next) {
-		if(req.session.userId) {
-			userManager.getUser(req.session.userId, function(err, user) {
-				if(err || !user) {
-					req.session.userId = undefined;
-				}
-
-				req.user = user || undefined;
-				next();
-			});
-		} else {
-			next();
-		}
-
-	});
 	app.express.use(function(req, res, next) {
 
 		res.setViewData = function(data) {
@@ -71,7 +44,6 @@ exports.attach = function(options) {
 	app.express.use(function(req, res, next) {
 
 		res.setViewData({
-			user : req.user,
 			moment : moment,
 			sections : app.sections,
 			sectionConfig : app.sectionConfig

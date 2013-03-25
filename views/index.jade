@@ -1,6 +1,157 @@
 extends base
 
-block main
-	for page, pageKey in sections.home.pages
-		div.page-content
-			!= page.html
+block content
+	div.column.left
+		div.div-resume-section.employment
+			div.div-resume-section
+				div.margin
+					h3 Employment
+					ul.resume-item
+						li.li-resume-item.featured
+							h4(work='Yahoo') Yahoo!
+							div.expandable.description
+								ul.employment-summary
+									li.duration October 2010 - Present
+									li.location Denver, CO
+									li.title Principal Software Engineer
+								ul.resume-item-description
+									li Currently helping to lead the team in re-envisioning the Yahoo! Contributor Network and Yahoo! Voices. We will take the successful User Generated Content strategy to the next level -- including making their global presence even more predominant.
+									li Previously I was a technical- and team- lead in developing the next generation of the Yahoo! Publishing Products on a Service-Oriented Architecture built in javascript using Node.JS. I also helped design and engineer a continuous-deployment strategy that allowed for rapid development/launching within our team and across collaborators throughout the company.
+									li I also...
+									ul
+										li ...aided in the transition from Associated Content (www.associatedcontent.com) to the Yahoo! Contributor Network (contributor.yahoo.com) and Yahoo! Voices (voices.yahoo.com).
+										li ...ran detailed SQL reports for editors and contributors to better understand the effects (and ultimately payments) of different types of content across different Yahoo! verticals, including Yahoo! Sports, Yahoo! News, and many others.
+										li ...led the team responsible for internationalizing and localizing the Yahoo! Contributor Network for the launch in the UK and Brazil. This project was planned, scoped, and completed in a 9-month period in 2011. The project also required the hiring and management of a short-term team of contractors to help with the externalization of text and implementation of a new MVC framework.
+										li ...coordinate with other teams within Yahoo! to enhance and develop internal APIs and components, primarily around globalization and debugging.
+
+						li.li-resume-item.featured
+							h4(work='Wall Street On Demand') Wall Street On Demand
+							div.expandable.description
+								ul.employment-summary
+									li.duration May 2008 - October 2010
+									li.location Boulder, CO
+									li.title Senior Developer
+								ul.resume-item-description
+									li Developed and maintained websites for several high-profile financial and investment firms
+									li Employed technologies such as XHTML, CSS, ASP/ASP.NET, JavaScript and XML/XSLT to provide a presentation and data access layer to systems and applications built by other teams and departments
+									li Focuseed on standards-compliance while maintaining a pixel-perfect representation of the designer's vision for aesthetics and interaction
+									li Utilizeed existing, and offered new, library code for internal development use
+									li Interfaced with clients and other technical teams for integration and project planning
+									li Assisted in training and gives lectures to new developers to the company, as well as those in the development training program
+						li.li-resume-item
+							h4(work='Bulldog Creative Services') Bulldog Creative Services
+							div.expandable.description
+								ul.employment-summary
+									li.duration March 2005 - May 2008
+									li.location Huntington, WV
+									li.title Web Director
+								ul.resume-item-description
+									li Utilized various web technologies, including - but not limited to - HTML, CSS, PHP, ASP, SQL, and SEO skills and design techniques to develop web sites and manage business logic for clients of Bulldog Creative Services.
+									li Managed a web development team to divide and conquer larger projects
+									li Consulted and assisted in technical support within the office and for clients
+									li Developed onsite and offsite data contingency and recovery plans internally and for clients
+									li Created technical documents and proposals for management and clients
+									li Engineered applications to aid Bulldog Creative and its clients in project and task management
+						li.li-resume-item
+							h4(work='Marshall University') Marshall University
+							div.expandable.description
+								ul.employment-summary
+									li.duration May 2006 - March 2007
+									li.location Huntington, WV
+									li.title Web Developer
+								ul.resume-item-description
+									li Greater Huntington Community Web Portal Design/Development and Initial Technical Support and Maintenance for the community's development needs using an ASP/MySQL backend, CSS, and XHTML.
+									li Continued to function as a site administrator and content moderator after project completion
+									li Continued employment as an employee of Marshall University IT Administration
+						li.li-resume-item
+							h4(work='NSFive Design') NSFive Design
+							div.expandable.description
+								ul.employment-summary
+									li.duration July 2005 - March 2007
+									li.location Huntington, WV
+									li.title Owner/Founder
+								ul.resume-item-description
+									li Designed and developed personal and small business websites using a unique and affordable pricing structure
+									li Employed PHP, ASP, MySQL, HTML, CSS and various other web-related skills
+									li Resold web hosting to Bulldog Creative Services and NSFive clients
+						li.li-resume-item
+							h4(work='Time Warner Cable') Time Warner Cable
+							div.expandable.description
+								ul.employment-summary
+									li.duration Summers, 2003-2005
+									li.location Clarksburg, WV
+									li.title
+								ul.resume-item-description
+									li
+										strong IT Specialist (2005)
+										ul
+											li Upgraded the current server to Microsoft Server 2003
+											li Implemented Active Directory to better manage security and software distribution
+											li Instated Disaster Contingency and Recovery Plans and Data Retention Policies.
+									li
+										strong Assistant to Marketing Director (2004)
+										ul
+											li Converted Lotus Approach databases to Microsoft Access for manageability and portability
+											li Ran SQL queries on local Microsoft Access and national Oracle databases to quantify marketing efforts
+									li
+										strong Marketing Coordinator (2003)
+										ul
+											li Coordinated PEG (Public Educational Government) Access Initiative
+											li Dedicated channel 18 as Harrison County’s PEG Access station
+											li Designed new systems for direct sales representatives using Microsoft Access, PHP, and MySQL
+	div.column.right
+		div.div-resume-section.education
+			div.div-resume-section
+				div.margin
+					h3 Education
+					ul.resume-item
+						li.li-resume-item
+							h4(education='Marshall University') Marshall University
+							div.expandable.description
+								ul.resume-item-description
+									li Graduation Date: May 2008 // GPA: 3.7
+									li Bachelor of Science: Computer Information Technology
+									li Foci: Software Development, Web Application Development
+									li Relevant Coursework:
+										ul.relevant-courses
+											li Programming Practicum with C++
+											li Data Structures
+											li Algorithms
+											li Advanced C++
+											li Software Engineering I & II
+											li Hardware Technology
+											li Web Programming
+											li E-Commerce
+											li Database Management
+											li Multimedia Systems
+											li Java
+											li Network Protocols
+											li Advanced Web Programming
+											li Introduction to Linux
+											li Principles of GIS
+						li.li-resume-item
+							h4(education='Bridgeport High School') Bridgeport High School
+							div.expandable.description
+								ul.resume-item-description
+									li Graduation Date: May 2004
+									li Emphasis in Communications
+									li Graduate of the Cisco Networking Academy
+		div.div-resume-section.skills.hidden
+			div.div-resume-section
+				div.margin
+					h3 Skills
+					ul#tag-cloud.resume-item.tag-cloud
+		div.div-resume-section.posts.hidden
+
+		include blog-posts
+		//
+			div.div-resume-section
+				div.margin
+					h3 Recent Blog Posts
+					ul.resume-item
+						li.li-resume-item
+							h4 Curiosity Was Framed
+							div.expandable.description
+								ul#post-list.resume-item-description
+									li
+										div.loader(style='height: 30px;')

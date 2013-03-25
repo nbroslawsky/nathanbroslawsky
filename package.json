@@ -1,11 +1,11 @@
 {
-	"name" : "tanychef.com",
+	"name" : "nathanbroslawsky.com",
 	"version" : "0.0.1",
 	"author" : "Nathan Broslawsky <nathan.broslawsky@nsfive.com>",
 	"scripts" : {
 		"start" : "supervisor ./server.js"
 	},
-	"main" : "./index.js",
+	"main" : "./main.js",
 	"dependencies" : {
 		"moment": "2.x",
 		"mongodb": "1.2.x",

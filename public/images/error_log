@@ -1,0 +1,70 @@
+[25-Aug-2010 22:30:14] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 249
+[25-Aug-2010 22:30:44] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 234
+[25-Aug-2010 22:30:44] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:30:44] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:30:44] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 234
+[25-Aug-2010 22:30:44] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:30:44] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:30:44] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:234) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:31:29] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 234
+[25-Aug-2010 22:31:29] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:31:29] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:31:29] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 234
+[25-Aug-2010 22:31:29] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:31:29] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:31:29] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:234) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:31:55] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:31:55] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:31:55] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:31:55] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:31:56] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:31:56] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:31:56] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:31:56] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:32:06] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:32:06] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 238
+[25-Aug-2010 22:32:06] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 239
+[25-Aug-2010 22:32:06] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:237) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:32:08] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:32:08] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 238
+[25-Aug-2010 22:32:08] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 239
+[25-Aug-2010 22:32:08] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:237) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:32:20] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:32:20] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 238
+[25-Aug-2010 22:32:20] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 239
+[25-Aug-2010 22:32:20] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:233) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:32:38] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:233) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:32:48] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:233) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:32:49] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:233) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:35:35] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:35:35] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:35:35] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:35:35] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:35:55] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:35:55] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:35:55] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:35:55] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:36:09] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:36:09] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:36:09] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:36:09] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:36:15] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:36:15] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:36:15] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:36:15] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:36:16] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:36:16] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:36:16] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:36:16] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:36:21] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:36:21] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:36:21] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:36:21] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:36:22] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:36:22] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:36:22] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:36:22] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85
+[25-Aug-2010 22:36:23] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 235
+[25-Aug-2010 22:36:23] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 236
+[25-Aug-2010 22:36:23] PHP Warning:  Division by zero in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 237
+[25-Aug-2010 22:36:23] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php:235) in /home3/nsfiveco/public_html/nathanbroslawsky/images/bg.php on line 85

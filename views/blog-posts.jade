@@ -1,0 +1,26 @@
+// img.photo(src="/images/tanya.jpg", alt="Tanya Broslawsky")
+
+- var paths = Object.keys(sectionConfig).map(function(key) {
+- 	return sectionConfig[key].iterable ? sectionConfig[key].path : undefined;
+- }).filter(function(path) { return path !== undefined; });
+
+each sectionKey in paths
+	- var section = sections[sectionKey]
+	- var numPages = Object.keys(section.pages).length
+	if numPages
+		div.div-resume-section.blog-posts
+			div.div-resume-section
+				div.margin
+					h3 Blog Posts
+					- var maxPages = 5
+					- var rPages = Object.keys(section.pages).map(function(i) { return section.pages[i]; })
+					- var pages = Array.prototype.slice.call(rPages,0,maxPages)
+
+					ul.resume-item-description
+						each page, pageKey in pages
+							li
+								a.title(href=page.absUrl) #{page.title}
+								div.timestamp #{moment(page.fileData.modified).fromNow()}
+					if rPages.length > maxPages
+						div.more
+							a(href='/'+sectionKey) more...

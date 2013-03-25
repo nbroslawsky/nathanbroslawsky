@@ -1,6 +1,11 @@
 extends base
 
-block main
-	div
-		h1 #{page.title}
-		div.page-content !{page.html}
+block content
+	div.column.left
+		div.div-resume-section
+			div.div-resume-section
+				div.margin
+					h3 #{page.title}
+					div.page-content.resume-item !{page.html}
+	div.column.right
+		include blog-posts

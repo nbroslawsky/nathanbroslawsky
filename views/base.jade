@@ -1,28 +1,46 @@
-doctype 5
-html(lang="en")
-	head
-		title Believers and Achievers
-		link(rel='stylesheet', href='/stylesheets/core.css')
+!!! transitional
+html(xmlns='http://www.w3.org/1999/xhtml')
+head
+		title Nathan Broslawsky || Resume
+		link(rel='stylesheet', type='text/css', href='/stylesheets/core.css')
+		meta(http-equiv='content-type', content='text/html;charset=UTF-8')
 	body
-		div.wrapper.shadow
-			div.header
-				include header
-			ul.main-nav
-				li
-					a(href="/recipes/") Recipes
-				li
-					a(href="/new-consultants/") New Consultants
-				li
-					a(href="/host-coaching/") Host Coaching
-				li
-					a(href="/bookings/") Bookings
-				li
-					a(href="/fundraisers/") Fundraisers
-				li
-					a(href="/recruiting/") Recruiting
-
-			div.content.clearfix
-				div.left-rail
-					include left-rail
-				div.right-rail
-					block main
+		div.trim
+		div.body
+			div.div-header-bar.hasLayout
+				#header.hasLayout
+					address
+						ul.hasLayout
+							li
+								a(href='mailto:nathan.broslawsky@nsfive.com')
+									img(src='/images/email.png', alt='Email me.', title='Email me.')
+								span.label Email
+								a(href='mailto:nathan.broslawsky@nsfive.com') nathan.broslawsky@nsfive.com
+							li
+								a(target='_blank', href='http://blog.nsfive.com')
+									img(src='/images/curiosity.png', alt='Curiosity Was Framed Blog', title='Curiosity Was Framed Blog')
+								span.label Blog
+								a(target='_blank', href='http://www.nathanbroslawsky.com/blog') nathanbroslawsky.com/blog
+							li
+								a(target='_blank', href='http://www.linkedin.com/in/broslawsky')
+									img(src='/images/linkedin.png', alt='Linkedin', title='Linkedin')
+								span.label Linked In
+								a(target='_blank', href='http://www.linkedin.com/in/broslawsky') http://www.linkedin.com/in/broslawsky
+					blockquote(cite='Geek Credo: Being Geek, Michael Lopp')
+						| We seek <em>definition</em> to understand<br />
+						| the <em>system</em> so that we can discern<br />
+						| the <em>rules</em> so that we<br />
+						| <em>know what to do next</em> so that<br />
+						| we <em>win</em>
+						| <cite><strong>Geek Credo</strong><br />Being Geek, Michael Lopp</cite>
+					h1
+						a(href="/") Nathan J. Broslawsky
+					h2
+			#resume.hasLayout
+				block content
+			#footer
+				ul
+					li © Nathan Broslawsky, 2012
+		script(type='text/javascript', src='/scripts/jquery-1.4.2.min.js')
+		script(type='text/javascript', src='/scripts/tag.js')
+		script(type='text/javascript', src='/scripts/core.js')

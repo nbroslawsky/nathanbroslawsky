@@ -3,6 +3,9 @@ module.exports = {
 		res.render('section-index', { section : this.sections[req.params.section] });
 	},
 	page : function(req, res, next) {
+
+		console.log(req.params);
+
 		var section = this.sections[req.params.section],
 			pageData = section.pages[req.params.page];
 

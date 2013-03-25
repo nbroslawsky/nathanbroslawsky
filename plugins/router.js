@@ -7,15 +7,7 @@ exports.attach = function(options) {
 		indexController = require(path.join(appDir, 'controller.index.js')),
 		sectionController = require(path.join(appDir, 'controller.section.js'));
 
-	app.express.get('/', app.auth, indexController.index.bind(app));
-	app.express.get('/login', indexController.login.bind(app));
-	app.express.get('/forgot-password', indexController.forgotPassword.bind(app));
-	app.express.get('/email-sent', indexController.emailSent.bind(app));
-	app.express.get('/change-password', indexController.changePassword.bind(app));
-
-	app.express.post('/authenticate', indexController.authenticate.bind(app));
-	app.express.post('/send-password', indexController.sendPassword.bind(app));
-	app.express.post('/submit-password-change', indexController.submitPasswordChange.bind(app));
+	app.express.get('/', indexController.index.bind(app));
 
 	app.on('sections-loaded', function() {
 
@@ -28,9 +20,9 @@ exports.attach = function(options) {
 					next();
 				};
 
-			app.express.get(new RegExp(urlBase + '/.*'), app.auth, app.static(sectionAbsPath, { urlBase : urlBase }));
-			app.express.get(urlBase, app.auth, addSectionParam, sectionController.index.bind(app));
-			app.express.get(urlBase + '/:page', app.auth, addSectionParam, sectionController.page.bind(app));
+			app.express.get(new RegExp(urlBase + '/.*'), app.static(sectionAbsPath, { urlBase : urlBase }));
+			app.express.get(urlBase, addSectionParam, sectionController.index.bind(app));
+			app.express.get(urlBase + '/:page', addSectionParam, sectionController.page.bind(app));
 		});
 
 

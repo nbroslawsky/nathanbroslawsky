@@ -2,31 +2,32 @@ var broadway = require('broadway'),
 	app = new broadway.App(),
 	path = require('path');
 
-var pathToDropbox = '/home/nbroslawsky/Dropbox/tanyachef.com',
-	siteSections = {
-		'Home' : false,
-		'New Consultants' : true,
-		'Bookings' : true,
-		'Fundraisers' : true,
-		'Recruiting' : true,
-		'Host Coaching' : true,
-		'Recipes' : true
-	};
+var pathToDropbox = '/home/nbroslawsky/Dropbox/nathanbroslawsky.com',
+	siteSections = { 'Blog' : true };
 
-app.use(require('./plugins/static'));
-app.use(require('./plugins/settings'));
-app.use(require('./plugins/email'));
-app.use(require('./plugins/watcher'), { path : pathToDropbox, recursive : true });
-app.use(require('./plugins/db'));
-app.use(require('./plugins/express'));
-app.use(require('./plugins/blog-sections'), { base : pathToDropbox, sections : siteSections });
-app.use(require('./plugins/router'), { base : pathToDropbox, sections : Object.keys(siteSections) });
 
-app.init(function(err) {
-	if(err) {
-		throw new Error(err);
-	}
+module.exports = function(callback) {
 
-	app.express.listen(80);
-	console.log('Listening on port 80');
-});
+	app.use(require('./plugins/static'));
+	app.use(require('./plugins/settings'));
+	app.use(require('./plugins/email'));
+	app.use(require('./plugins/watcher'), { path : pathToDropbox, recursive : true });
+	app.use(require('./plugins/express'));
+	app.use(require('./plugins/blog-sections'), { base : pathToDropbox, sections : siteSections });
+	app.use(require('./plugins/router'), { base : pathToDropbox, sections : Object.keys(siteSections) });
+
+	app.init(function(err) {
+		if(err) { throw new Error(err); }
+
+
+		if(callback) {
+			callback(app);
+		} else {
+			app.express.listen(80);
+			console.log('Listening on port 80');
+		}
+	});
+
+};
+
+if(!module.parent) { module.exports(); }

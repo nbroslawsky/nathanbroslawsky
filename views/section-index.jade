@@ -1,11 +1,17 @@
 extends base
 
-block main
-	div
-		h1 #{section.title}
+block content
+	div.column.left
 		if !Object.keys(section.pages).length
 			div.come-back-later There is no content here just yet... Please check back soon!
-		ul
-			for page in section.pages
-				li
-					a(href=page.url + '/') #{page.title}
+
+		for page in section.pages
+			div.div-resume-section
+				div.div-resume-section
+					div.margin
+						h3
+							a(href=page.absUrl + '/') #{page.title}
+						div.page-content.resume-item !{page.html}
+
+	div.column.right
+		include blog-posts
