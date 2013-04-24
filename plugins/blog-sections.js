@@ -3,6 +3,14 @@ var path = require('path'),
 	async = require('async'),
 	fs = require('fs');
 
+function sortSection(section) {
+	var newPages = {};
+	section.pages = Object.keys(section.pages)
+		.map(function(key) { return { key : key, page : section.pages[key] }; })
+		.sort(function(a,b) { return Date.parse(b.page.fileData.modified) - Date.parse(a.page.fileData.modified); })
+		.reduce(function(init,v) { init[v.key] = v.page; return init;  },{});
+}
+
 exports.attach = function(options) {
 	var app = this;
 
@@ -44,6 +52,7 @@ exports.init = function(done) {
 					mdBlog.setTitle(app.sectionConfig[section].title);
 					mdBlog.setDirectory(sectionUrl);
 					this.replacePlaceholders({'ROOT_PATH' : '/'+sectionUrl });
+					sortSection(mdBlog);
 					app.sections[sectionUrl] = mdBlog;
 				});
 
@@ -77,6 +86,10 @@ exports.init = function(done) {
 			return init;
 		}, {}),
 		function(err, results) {
+
+			Object.keys(results).forEach(function(section) {
+				sortSection(results[section]);
+			})
 
 			app.sections = results;
 			app.emit('sections-loaded');
