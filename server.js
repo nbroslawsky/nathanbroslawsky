@@ -20,12 +20,13 @@ module.exports = function(callback) {
 		if(err) { throw new Error(err); }
 
 
-		if(callback) {
-			callback(app);
-		} else {
-			app.express.listen(80);
-			console.log('Listening on port 80');
-		}
+		// if(callback) {
+		// 	callback(app);
+		// } else {
+			app.express.listen(3001);
+			console.log('Listening on port 3001');
+			callback && callback(app)
+		// }
 	});
 
 };

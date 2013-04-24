@@ -1,19 +1,20 @@
 var express = require('express'),
 	app = express();
 
-module.exports = function(redirectTo, callback) {
+module.exports = function(redirectTo, port, callback) {
 
 	app.get('/', function(req, res, next) {
 		res.writeHead(302, {'Location': redirectTo});
 		res.end();
 	});
 
-	if(callback) {
-		callback(app);
-	} else {
-		app.express.listen(80);
-		console.log('Listening on port 80');
-	}
+	// if(callback) {
+	// 	callback(app);
+	// } else {
+		app.listen(port);
+		console.log('Listening on port ' + port);
+		callback && callback(app);
+	// }
 };
 
 if(!module.parent) { module.exports('http://www.google.com'); }
