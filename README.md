@@ -1,4 +1,4 @@
-tanyachef.com
+nathanbroslawsky.com
 =========
 
 The idea behind this site is that the contents can be entirely maintained through Dropbox (on an Ubuntu server, specifically). Here's what we need:
@@ -9,7 +9,7 @@ The idea behind this site is that the contents can be entirely maintained throug
 * the binary `inotifywait`: `sudo apt-get install inotify-tools`
 * folders in your Dropbox instance that map to sections on your site. These will be explicitely referenced.
 
-Config File (/etc/tanyachef.com/config.json)
+Config File (/etc/nathanbroslawsky.com/config.json)
 --------------------------------------------
 
 ```javascript
