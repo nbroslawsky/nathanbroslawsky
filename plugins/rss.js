@@ -28,8 +28,8 @@ exports.attach = function(options) {
 				feed.item({
 					title:  pageData.title,
 					description: pageData.html
-						.replace(/(<img .*?src=)(['"])(.*?)(\3)/igm, "$1$2"+domain+"/$3$4")
-						.replace(/(<a .*?href=)(['"])(?!https?:\/\/)(.*?)(\3)/igm, "$1$2"+domain+"/$3$4"),
+						.replace(/(<img .*?src=)(['"])(.*?)(\3)/igm, "$1$2"+domain+"$3$4")
+						.replace(/(<a .*?href=)(['"])(?!https?:\/\/)(.*?)(\3)/igm, "$1$2"+domain+"$3$4"),
 					url: url.resolve(domain,pageData.absUrl),
 					date: pageData.fileData.modified
 				});
