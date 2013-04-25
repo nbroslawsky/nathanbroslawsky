@@ -8,7 +8,7 @@ exports.attach = function(options) {
 		sectionController = require(path.join(appDir, 'controller.section.js'));
 
 	app.express.get('/', indexController.index.bind(app));
-	app.express.get('/rss.xml', indexController.rss.bind(app));
+	app.express.get('/blog/rss.xml', indexController.rss.bind(app));
 
 	app.on('sections-loaded', function() {
 
