@@ -11,6 +11,7 @@
 		"mongodb": "1.2.x",
 		"express": "3.x",
 		"jade": "0.28.x",
+		"rss": "0.0.4",
 		"async": "0.2.x",
 		"nodemailer": "0.3.x",
 		"markdown-blog" : "git://github.com/nbroslawsky/markdown-blog.git#master",
