@@ -13,6 +13,7 @@ exports.attach = function(options) {
 		next();
 	});
 	app.express.use(app.static(path.join(__dirname,'../public')));
+	app.express.use(express.favicon(path.join(__dirname,'../public/favicon.ico')));
 	app.express.use(express.bodyParser());
 	app.express.use(express.cookieParser());
 	app.express.use(express.session({cookie: { path: '/', httpOnly: true, maxAge: null }, secret:app.settings.sessionkey}));
