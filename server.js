@@ -15,6 +15,7 @@ module.exports = function(callback) {
 	app.use(require('./plugins/express'));
 	app.use(require('./plugins/blog-sections'), { base : pathToDropbox, sections : siteSections });
 	app.use(require('./plugins/router'), { base : pathToDropbox, sections : Object.keys(siteSections) });
+	app.use(require('./plugins/rss'));
 
 	app.init(function(err) {
 		if(err) { throw new Error(err); }

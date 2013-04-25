@@ -57,6 +57,8 @@ exports.init = function(done) {
 				});
 
 			});
+
+			app.emit('sections-updated');
 	});
 
 	async.parallel(
@@ -87,11 +89,10 @@ exports.init = function(done) {
 		}, {}),
 		function(err, results) {
 
-			Object.keys(results).forEach(function(section) {
-				sortSection(results[section]);
-			})
+			Object.keys(results).forEach(function(section) { sortSection(results[section]); });
 
 			app.sections = results;
+			app.emit('sections-updated');
 			app.emit('sections-loaded');
 			done();
 		}
