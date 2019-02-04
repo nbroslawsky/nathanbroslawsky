@@ -4,8 +4,10 @@ const app = express()
 const port = 8080
 
 // if we're running in production
+console.log('NODE_ENV', process.env.NODE_ENV)
 if(process.env.NODE_ENV == 'production') {
 	app.use((req, res, next) => {
+		console.log('x-forwarded-proto', req.headers['x-forwarded-proto'])
 		if(req.headers['x-forwarded-proto'] == 'http') {
 			res.redirect('https://' + req.headers.host + req.url)
 		} else {
