@@ -32,8 +32,8 @@ div.headings {
 
 h1, h2 { margin: 0 0 0 0; padding: 0 0 0 0; }
 
-div.headings h1 { font-size: 5em; }
-div.headings h2 { font-size: 3em; }
+div.headings h1 { font-size: 5em; letter-spacing: +1; }
+div.headings h2 { font-size: 3em; letter-spacing: +2; }
 
 div.content {
 	position:absolute;
