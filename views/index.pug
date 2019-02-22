@@ -1,17 +1,16 @@
 html
 	head
 		title Nathan Broslawsky | nathanbroslawsky.com
+		link(href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300",rel="stylesheet")
+		link(rel="stylesheet", type="text/css", href="/files/styles/main.css")
 	body
-		h1 Nathan Broslawsky
-		h2 VP of Engineering, SmugMug
-		ul
-			li
-				a(href="https://www.linkedin.com/in/broslawsky/", target="_blank") LinkedIn
-			li
-				a(href="https://twitter.com/nbroslawsky", target="_blank") Twitter
-			li
-				a(href="https://github.com/nbroslawsky", target="_blank") GitHub
-			li
-				a(href="https://medium.com/@nbroslawsky", target="_blank") Medium
-		p(data-protocol=protocol)
-			em Yes, I know there is no styling on this. But you know what they say... if you're not embarrased by your MVP, you're doing it wrong.
+		div.cover
+			div.headings
+				h1 Nathan Broslawsky
+				h2 VP of Engineering, SmugMug
+		div.content
+			div.social
+				a.badge.linkedin(href="https://www.linkedin.com/in/broslawsky/", target="_blank") LinkedIn
+				a.badge.twitter(href="https://twitter.com/nbroslawsky", target="_blank") Twitter
+				a.badge.github(href="https://github.com/nbroslawsky", target="_blank") GitHub
+				a.badge.medium(href="https://medium.com/@nbroslawsky", target="_blank") Medium

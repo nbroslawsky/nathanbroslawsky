@@ -1,0 +1,82 @@
+/*html { font-size: 2vw; }*/
+
+@media screen and (min-width: 5em) {
+  html {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (min-width: 50em) {
+  html {
+    font-size: 1em;
+  }
+}
+
+body {
+	background-color: #eff6ff;
+	margin:0 0;
+	padding: 0 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 100;
+}
+div.cover {
+	background-size:cover;
+	background-image: url('/files/2019Aspen-PANO.jpg');
+	height: 90vh;
+	background-position: center;
+}
+div.headings {
+	padding-top:5vh;
+	text-align: center
+}
+
+h1, h2 { margin: 0 0 0 0; padding: 0 0 0 0; }
+
+div.headings h1 { font-size: 5em; }
+div.headings h2 { font-size: 3em; }
+
+div.content {
+	position:absolute;
+	bottom:0px;
+	padding-bottom:10px;
+	width:100%;
+	background-color: #eff6ff;
+	height:10vh;
+}
+
+
+div.social {
+	font-size:0px;
+	padding-top:1vh;
+	text-align:center;
+}
+
+div.social a.badge {
+	width: 8vh;
+	height: 8vh;
+	display:inline-block;
+	background-size:1351%;
+	max-height: 100%;
+	margin-left:2%;
+	margin-right:2%;
+}
+
+div.social a.linkedin {
+	background-image: url('/files/social-icons.png');
+	background-position: 64.5% 7%;
+}
+
+div.social a.twitter {
+	background-image: url('/files/social-icons.png');
+	background-position: 15.5% 7%;
+}
+
+div.social a.github {
+	background-image: url('/files/social-icons.png');
+	background-position: 25.4% 52%;
+}
+
+div.social a.medium {
+	background-image: url('/files/social-icons.png');
+	background-position: 25.4% 7%;
+}
