@@ -14,15 +14,16 @@
 	<div class="row">
 		<div class="masonry isotopeContainer">
 
-			{{#each homeStories}}
+			{{#each stories}}
 			<div class="col-md-4 masonry-row col-sm-6 lifestyle">
 				{{#if preview.image}}
-				<img src="{{preview.image}}" alt="">
+				<a href="{{preview.url}}"><img src="{{preview.image}}" alt=""></a>
+				{{!-- <img src="{{preview.image}}" alt=""> --}}
 				{{else}}
-				<div class="medium-date">
+				<a href="{{preview.url}}" class="medium-date">
 					<div class="medium-date-day">{{view.date}}</div>
 					<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
-				</div>
+				</a>
 				{{/if}}
 				
 				<div class="masonry-content">
@@ -38,6 +39,7 @@
 		</div>
 	</div>
 </div>
+
 
 <ul class="about-social">
 	<li><a href="https://www.linkedin.com/nbroslawsky" target="_blank"><i class="fa fa-linkedin"></i></a></li>

@@ -2450,11 +2450,17 @@ body.is-push-bar-full {
 	margin-right: 4px;
 }
 .medium-date {
+	display: block;
 	background-color: #6d6d71;
 	color: #fff;
 	text-align: center;
 	padding:85px 0;
 	font-family: Raleway;
+}
+a.medium-date:hover {
+	background-color: #6d6d71;
+	color: #fff;
+	text-decoration: none;
 }
 .medium-date .medium-date-day {
 	font-size: 88px;
@@ -2917,9 +2923,11 @@ body.is-push-bar-full {
 	margin-bottom: 20px;
 	position: relative;
 }
-.masonry .masonry-row > img {
+.masonry .masonry-row > img,
+.masonry .masonry-row > a > img {
 	width: 100%;
 }
+
 .masonry .masonry-row .masonry-content {
 	background-color: #fff;
 	margin-top: 0px;

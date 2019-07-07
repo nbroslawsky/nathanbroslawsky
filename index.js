@@ -38,12 +38,12 @@ app.set('view engine', '.hbs')
 app.use('/files', express.static(path.join(__dirname, 'static')))
 app.use(favicon(path.join(__dirname, 'static', 'img', 'favicon.ico')))
 
-app.get('/', function(req, res) {
+app.get('/', function(req, res, next) {
 
 	async.parallel({
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err + ' error ocurred')
+		if(err) return next(err)
 		res.render('home', {
 			title: 'Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -54,12 +54,12 @@ app.get('/', function(req, res) {
 	})
 })
 
-app.get('/about', function(req, res) {
+app.get('/about', function(req, res, next) {
 
 	async.parallel({
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err + ' error ocurred')
+		if(err) return next(err)
 		res.render('about', {
 			title: 'Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -69,12 +69,12 @@ app.get('/about', function(req, res) {
 	})
 })
 
-app.get('/blog', function(req, res) {
+app.get('/blog', function(req, res, next) {
 
 	async.parallel({
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err + ' error ocurred')
+		if(err) return next(err)
 		res.render('masonry', {
 			title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -84,13 +84,13 @@ app.get('/blog', function(req, res) {
 	})
 })
 
-app.get('/blog/:slug', function(req, res) {
+app.get('/blog/:slug', function(req, res, next) {
 
 	async.parallel({
 		story: dataCalls.story(req),
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err + ' error ocurred')
+		if(err) return next(err)
 		res.render('post', {
 			title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -101,4 +101,21 @@ app.get('/blog/:slug', function(req, res) {
 	})
 })
 
-app.listen(port, () => console.log(`nathanbroslawsky.com is listening on port ${port}!`))
+app.get('*', function(req, res, next) {
+	res.statusCode = 404
+	res.render('404', {
+		title: 'Page Not Found | Nathan Broslawsky | nathanbroslawsky.com',
+		layout: 'redesign'
+	})
+})
+
+// app.use(function(err, req, res, next) {
+// 	console.log('whoa did i make it here?', err.stack)
+// 	res.statusCode = 500
+// 	res.render('500', {
+// 		title: 'Something Broke | Nathan Broslawsky | nathanbroslawsky.com',
+// 		layout: 'redesign'
+// 	})
+// })
+
+app.listen(port, () => console.log(`nathanbroslawsky.com [${process.env.NODE_ENV}] is listening on port ${port}!`))

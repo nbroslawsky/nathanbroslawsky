@@ -22,7 +22,7 @@
 				<div class="row post-medium">
 					{{#if preview.image}}
 					<div class="col-md-5">
-						<div class="row"><img src="{{preview.image}}" alt="" /></div>
+						<div class="row"><a href="{{preview.url}}"><img src="{{preview.image}}" alt="" /></a></div>
 					</div>
 					{{else}}
 					<div class="col-md-5">
@@ -39,7 +39,7 @@
 							<div class="medium-post-box clearfix">
 								<div class="post-item-paragraph">
 									<h2><a href="/blog/{{full_slug}}">{{name}}</a></h2>
-									<p class="ellipsis-readmore">{{preview.sanitized}} <a class="more" href="/blog/{{full_slug}}">More »</a></p>
+									<p class="ellipsis-readmore">{{preview.sanitized}} <a class="more" href="{{preview.url}}">More »</a></p>
 								</div>
 								<div class="pm-bottom-info clearfix">
 									<div class="pull-left">
