@@ -41,7 +41,7 @@ app.get('/', function(req, res) {
 	async.parallel({
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err.statusCode.toString() + ' error ocurred')
+		if(err) return res.send('A ' + err + ' error ocurred')
 		res.render('home', {
 			title: 'Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -57,7 +57,7 @@ app.get('/about', function(req, res) {
 	async.parallel({
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err.statusCode.toString() + ' error ocurred')
+		if(err) return res.send('A ' + err + ' error ocurred')
 		res.render('about', {
 			title: 'Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -72,7 +72,7 @@ app.get('/blog', function(req, res) {
 	async.parallel({
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err.statusCode.toString() + ' error ocurred')
+		if(err) return res.send('A ' + err + ' error ocurred')
 		res.render('masonry', {
 			title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
@@ -88,7 +88,7 @@ app.get('/blog/:slug', function(req, res) {
 		story: dataCalls.story(req),
 		stories: dataCalls.stories(req)
 	}, function(err, results) {
-		if(err) return res.send('A ' + err.statusCode.toString() + ' error ocurred')
+		if(err) return res.send('A ' + err + ' error ocurred')
 		res.render('post', {
 			title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
 			stories: results.stories,
