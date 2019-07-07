@@ -20,7 +20,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "./node_modules/.bin/supervisor index.js"
+    "dev": "./node_modules/.bin/supervisor --extensions 'node,js,hbs' index.js"
   },
   "repository": {
     "type": "git",
