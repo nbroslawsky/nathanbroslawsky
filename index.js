@@ -7,6 +7,7 @@ const url = require('url')
 const marked = require('marked')
 const async = require('async')
 const dataCalls = require('./lib/data')
+const favicon = require('serve-favicon')
 
 app.use((req, res, next) => {
 	if(req.headers['x-forwarded-proto'] == 'http') {
@@ -35,6 +36,7 @@ app.engine('.hbs', exphbs({
 
 app.set('view engine', '.hbs')
 app.use('/files', express.static(path.join(__dirname, 'static')))
+app.use(favicon(path.join(__dirname, 'static', 'img', 'favicon.ico')))
 
 app.get('/', function(req, res) {
 
