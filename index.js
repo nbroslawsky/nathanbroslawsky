@@ -109,13 +109,4 @@ app.get('*', function(req, res, next) {
 	})
 })
 
-// app.use(function(err, req, res, next) {
-// 	console.log('whoa did i make it here?', err.stack)
-// 	res.statusCode = 500
-// 	res.render('500', {
-// 		title: 'Something Broke | Nathan Broslawsky | nathanbroslawsky.com',
-// 		layout: 'redesign'
-// 	})
-// })
-
 app.listen(port, () => console.log(`nathanbroslawsky.com [${process.env.NODE_ENV}] is listening on port ${port}!`))
