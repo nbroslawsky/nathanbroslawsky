@@ -1,0 +1,43 @@
+{{#section 'head'}}
+	<meta property="og:title" content="{{story.name}} - Nathan Broslawsky" />
+	<meta property="twitter:title" content="{{story.name}}" />
+	<meta property="og:url" content="https://www.nathanbroslawsky.com/blog/{{story.preview.url}}" />
+	<meta property="og:image" content="{{story.preview.image}}" />
+	<meta property="og:description" content="{{story.preview.sanitized}}" />
+	<meta property="og:type" content="article" />
+	<meta property="og:site_name" content="Nathan Broslawsky" />
+
+	<meta property="article:publisher" content="https://www.nathanbroslawsky.com" />
+	<meta property="article:author" content="Nathan Broslawsky" />
+	<meta property="article:published_time" content="{{story.first_published_at}}" />
+{{/section}}
+
+<div class="container">
+	<div class="head-text text-highlight">
+		<h1>{{story.name}}</h1>
+	</div>
+</div>
+
+<div class="post-fluid">
+	<div class="container-fluid">
+		<div class="container">
+			<div class="row post-items">
+				<div class="col-md-2">
+					<div class="post-item-short">
+						<span class="big-text">{{story.view.date}}</span>
+						<span class="small-text">{{story.view.month}} {{story.view.year}}</span>
+					</div>
+				</div>
+				<div class="col-md-10">
+					<div class="post-item post-item-detail">
+						<div class="post-item-paragraph">
+							{{#story.content}}
+								{{> (lookup . 'component') }}
+							{{/story.content}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,58 @@
+{{#section 'head'}}
+	<meta property="og:title" content="Nathan Broslawsky - Blog" />
+	<meta property="og:url" content="https://www.nathanbroslawsky.com/blog/" />
+	<meta property="og:image" content="https://www.nathanbroslawsky.com/files/img/nbroslawsky.jpg" />
+	{{!-- <meta property="og:description" content="" /> --}}
+	<meta property="og:site_name" content="Nathan Broslawsky" />
+{{/section}}
+
+<div class="container">
+	<div class="head-text">
+		<h1>Blog</h1>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="post-mediums">
+
+				{{#each stories}}
+
+				<div class="row post-medium">
+					{{#if preview.image}}
+					<div class="col-md-5">
+						<div class="row"><img src="{{preview.image}}" alt="" /></div>
+					</div>
+					{{else}}
+					<div class="col-md-5">
+						<div class="row">
+							<div class="medium-date">
+								<div class="medium-date-day">{{view.date}}</div>
+								<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
+							</div>
+						</div>
+					</div>
+					{{/if}}
+					<div class="col-md-7">
+						<div class="post-item">
+							<div class="medium-post-box clearfix">
+								<div class="post-item-paragraph">
+									<h2><a href="/blog/{{full_slug}}">{{name}}</a></h2>
+									<p class="ellipsis-readmore">{{preview.sanitized}} <a class="more" href="/blog/{{full_slug}}">More »</a></p>
+								</div>
+								<div class="pm-bottom-info clearfix">
+									<div class="pull-left">
+										on {{view.fulldate}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{{/each}}
+			</div>
+		</div>
+	</div>
+</div>

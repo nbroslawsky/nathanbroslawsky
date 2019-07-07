@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "async": "^3.1.0",
+    "aws-sdk": "^2.488.0",
     "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "marked": "^0.6.3",
+    "moment": "^2.24.0",
     "pug": "^2.0.3",
+    "sanitize-html": "^1.20.1",
+    "storyblok-js-client": "^1.0.27",
+    "storyblok-node-client": "^1.0.2",
     "supervisor": "^0.12.0"
   },
   "devDependencies": {},

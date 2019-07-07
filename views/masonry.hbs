@@ -1,0 +1,34 @@
+
+<div class="container">
+	<div class="head-text">
+		<h1 class="head-text-highlight">Blog</h1>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="masonry isotopeContainer">
+
+			{{#each stories}}
+			<div class="col-md-4 masonry-row col-sm-6 lifestyle">
+				{{#if preview.image}}
+				<img src="{{preview.image}}" alt="">
+				{{else}}
+				<div class="medium-date">
+					<div class="medium-date-day">{{view.date}}</div>
+					<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
+				</div>
+				{{/if}}
+				
+				<div class="masonry-content">
+					<a href="{{preview.url}}">{{name}}</a>
+					<p class="spot ellipsis-readmore">{{preview.sanitized}} <a href="{{preview.url}}" class="more">»</a></p>
+					<div class="links">
+						<span>{{view.fulldate}}</span>
+					</div>
+				</div>
+			</div>
+			{{/each}}
+
+		</div>
+	</div>
+</div>

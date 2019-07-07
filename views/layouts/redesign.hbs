@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- <link rel="icon" href="/files/img/favicon.ico"> -->
+<title>{{title}}</title>
+<!-- Bootstrap core CSS -->
+<link href="/files/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome CSS -->
+<link href="/files/css/font-awesome.min.css" rel="stylesheet">
+<!-- Jasny CSS -->
+<link href="/files/css/jasny-bootstrap.min.css" rel="stylesheet">
+<!-- Animate CSS -->
+<link href="/files/css/animate.css" rel="stylesheet">
+<!-- Code CSS -->
+<link href="/files/css/tomorrow-night.css" rel="stylesheet" />
+<!-- Gallery CSS -->
+<link href="/files/css/bootstrap-gallery.css" rel="stylesheet">
+<!-- ColorBox CSS -->
+<link href="/files/css/colorbox.css" rel="stylesheet">
+<!-- Custom font -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,200,100,300,500,600,700,800,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Slab&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+<!-- Custom styles for this template -->
+<link href="/files/css/style.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+{{{_sections.head}}}
+</head>
+<body>
+	<div class="page-loader">
+		<div class="loader-in">Loading...</div>
+		<div class="loader-out">Loading...</div>
+	</div>
+
+	<aside class="navmenu">
+		<div class="post-titles">
+			<div class="tag-title">
+				<div class="container">
+					<p class="tags" id="post-titles">
+						&nbsp;
+{{!-- 						<a data-filter=".pt-fashion" href="#">fashion</a>
+						<a data-filter=".pt-culture" href="#">culture</a>
+						<a data-filter=".pt-art" href="#">art</a>
+						<a data-filter="*" href="#" class="unfilter hide">all</a> --}}
+					</p>
+				</div>
+			</div>
+			<button type="button" class="remove-navbar"><i class="fa fa-times"></i></button>
+			<ul class="post-title-list clearfix">
+				{{#each stories}}
+				<li>
+					<div>
+						<h5>
+							<i class="fa fa-file-text-o"></i>
+							<a href="{{preview.url}}">{{name}}</a>
+						</h5>
+						<div class="post-subinfo">
+							<span>{{view.fulldate}}</span>
+						</div>
+					</div>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</aside>
+
+	<div class="canvas">
+		<div class="canvas-overlay"></div>
+		<header>
+			<nav class="navbar navbar-fixed-top nav-down navbar-laread">
+				<div class="container">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/"><img height="64" src="/files/img/logo-light.png" alt=""></a>
+					</div>
+					<div class="get-post-titles">
+						<button type="button" class="navbar-toggle push-navbar" data-navbar-type="default">
+							<i class="fa fa-bars"></i>
+						</button>
+					</div>
+					<button type="button" class="navbar-toggle collapsed menu-collapse" data-toggle="collapse" data-target="#main-nav">
+						<span class="sr-only">Toggle navigation</span>
+						<i class="fa fa-plus"></i>
+					</button>
+					<div class="collapse navbar-collapse" id="main-nav">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="/" role="button" aria-expanded="false">HOME</a>
+							</li>
+							<li>
+								<a href="/about" role="button" aria-expanded="false">ABOUT</a>
+							</li>
+							<li>
+								<a href="/blog" role="button" aria-expanded="false">BLOG</a>
+							</li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				</div>
+			</nav>
+		</header>
+
+		{{{body}}}
+
+		<footer class="container-fluid footer">
+			<div class="container text-center">
+				<div class="footer-logo"><img src="/files/img/logo-black.png" alt=""></div>
+			</div>
+		</footer>
+	</div>
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="/files/js/jquery.min.js"></script>
+	<script src="/files/js/bootstrap.min.js"></script>
+	<script src="/files/js/jasny-bootstrap.min.js"></script>
+	<script src="/files/js/prettify.js"></script>
+	<script src="/files/js/lang-css.js"></script>
+	<script src="/files/js/jquery.blueimp-gallery.min.js"></script>
+	<script src="/files/js/jquery.ellipsis.min.js"></script>
+	<script src="/files/js/jquery.dotdotdot.min.js"></script>
+	<script src="/files/js/jquery.colorbox-min.js"></script>
+	<script src="/files/js/jquery.nicescroll.min.js"></script>
+	<script src="/files/js/imagesloaded.js"></script>
+	<script src="/files/js/masonry.js"></script>
+	<script src="/files/js/viewportchecker.js"></script>
+	<script src="/files/js/isotope.pkgd.min.js"></script>
+	<script src="/files/js/jquery.touchSwipe.min.js"></script>
+	<script src="/files/js/calendar.js"></script>
+	<script src="/files/js/script.js"></script>
+</body>
+</html>
