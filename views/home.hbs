@@ -15,7 +15,7 @@
 		<div class="masonry isotopeContainer">
 
 			{{#each stories}}
-			<div class="col-md-4 masonry-row col-sm-6 lifestyle">
+			<div class="col-md-4 masonry-row col-sm-6" data-url="{{preview.url}}">
 				{{#if preview.image}}
 				<a href="{{preview.url}}"><img src="{{preview.image}}" alt=""></a>
 				{{!-- <img src="{{preview.image}}" alt=""> --}}

@@ -408,6 +408,10 @@ setInterval(function() {
 		});
 		/*!masonry isotope*/
 
+		$('.masonry-row[data-url]').on('click', function() {
+			document.location.href = $(this).data('url')
+		})
+
 		/*big gallery isotope*/
 		var $bigGalleryIsotoper = $('.isotopeGallery').isotope({
 			itemSelector: '.gallery-item'
