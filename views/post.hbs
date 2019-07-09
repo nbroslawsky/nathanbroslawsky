@@ -41,10 +41,42 @@
 		                	<div class="addthis_inline_share_toolbox"></div>
 						</div>
 					</div>
+					{{#if readMore}}
+					<div class="next-prev-post clearfix">
+						{{#if readMore.prev}}
+						<div class="post-direction">
+							<a href="{{readMore.prev.preview.url}}" class="post-prev">
+								<span class="post-way"><i class="fa fa-angle-left"></i> prev post</span>
+								<span class="title">{{readMore.prev.name}}</span>
+							</a>
+						</div>
+						{{else}}
+						<div class="post-direction">
+						</div>
+						{{/if}}
+
+						{{#if readMore.next}}
+						<div class="post-direction">
+							<a href="{{readMore.next.preview.url}}" class="post-next">
+								<span class="post-way">next post <i class="fa fa-angle-right"></i></span>
+								<span class="title">{{readMore.next.name}}</span>
+							</a>
+						</div>
+						{{else}}
+						<div class="post-direction">
+						</div>
+						{{/if}}
+					</div>
+					{{/if}}
+
 				</div>
+
 			</div>
+
 		</div>
+
 	</div>
+
 </div>
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->

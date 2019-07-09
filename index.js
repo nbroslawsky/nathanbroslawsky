@@ -75,12 +75,18 @@ app.get('/blog', function (req, res, next) {
 
 app.get('/blog/:slug', function (req, res, next) {
   async.parallel({
-    story: dataCalls.story(req)
+    story: dataCalls.story(req),
+    stories: dataCalls.stories(req)
   }, function (err, results) {
     if (err) return next(err)
+
     res.render('post', {
       title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
       story: results.story,
+      readMore: {
+      	prev: dataCalls.getPrevStory(results.story.id, results.stories),
+      	next: dataCalls.getNextStory(results.story.id, results.stories),
+      },
       params: req.query,
       layout: 'redesign'
     })
