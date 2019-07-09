@@ -1064,7 +1064,7 @@ body.is-push-bar-full {
 	width: 50%;
 }
 .post-item-paragraph p {
-	color: #686869;
+	color: #000000;
 	text-align: justify;
 	line-height: 26px;
 	margin-bottom: 20px;
@@ -1072,7 +1072,7 @@ body.is-push-bar-full {
 }
 
 .post-item-paragraph ul {
-	color: #686869;
+	color: #000000;
 	text-align: justify;
 	line-height: 26px;
 	margin-bottom: 20px;
@@ -2928,10 +2928,6 @@ a.medium-date:hover {
 	width: 100%;
 }
 
-.masonry .masonry-row[data-url] {
-	cursor: pointer;
-}
-
 .masonry .masonry-row .masonry-content {
 	background-color: #fff;
 	margin-top: 0px;
@@ -2969,7 +2965,7 @@ a.medium-date:hover {
 }
 .masonry .masonry-row .masonry-content .links a,
 .masonry .masonry-row .masonry-content .links span {
-	color: #666666;
+	color: #a9a9a9;
 	font-size: 13px;
 }
 .masonry .masonry-row .masonry-content .links a:hover {
@@ -3015,7 +3011,7 @@ a.medium-date:hover {
 	margin-bottom: 8px;
 	display: inline-block;
 	padding-top: 10px;
-	font-weight: 600;
+	font-weight: 400;
 }
 .masonry .masonry-row .masonry-content > a:hover {
 	color: #987357;
@@ -3024,7 +3020,7 @@ a.medium-date:hover {
 .masonry .masonry-row .masonry-content > p.spot {
 	margin-bottom: 7px;
 	display: inline-block;
-	color: #000000;
+	color: #787878;
 	font-size: 14px;
 	padding-top: 0;
 	font-weight: 400;
@@ -3532,7 +3528,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 .about-h1 {
 	font-size: 38px;
 	color: #a28671;
-	font-weight: 600;
+	font-weight: 300;
 	margin-bottom: 23px;
 }
 .about-lead {
