@@ -7,6 +7,7 @@ const marked = require('marked')
 const async = require('async')
 const dataCalls = require('./lib/data')
 const favicon = require('serve-favicon')
+const setupFeed = require('./lib/setup-feed')
 
 app.use((req, res, next) => {
   if (req.headers['x-forwarded-proto'] === 'http') {
@@ -48,6 +49,17 @@ app.get('/', function (req, res, next) {
       protocol: req.originalUrl,
       layout: 'redesign'
     })
+  })
+})
+
+app.get('/blog.rss', function(req, res, next) {
+  async.parallel({
+    stories: dataCalls.stories(req)
+  }, function (err, results) {
+    if (err) return next(err)
+    const feed = require('./lib/setup-feed')(results)
+    res.set('Content-Type', 'text/xml')
+    res.send(feed.rss2())
   })
 })
 
