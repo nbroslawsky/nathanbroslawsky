@@ -9,7 +9,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.0.0",
     "feed": "^4.0.0",
-    "marked": "^0.6.3",
+    "marked": "^0.7.0",
     "moment": "^2.24.0",
     "pug": "^2.0.4",
     "sanitize-html": "^1.20.1",
