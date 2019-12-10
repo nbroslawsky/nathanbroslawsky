@@ -105,14 +105,19 @@ app.get('/blog/:slug', function (req, res, next) {
     story: dataCalls.story(req),
     links: dataCalls.links(req)
   }, function (err, results) {
+
+    console.log('here we are a')
     
     var errorFetchingData = false
     if (err) {
       errorFetchingData = true
     }
 
+    console.log('here we are b', errorFetchingData)
+
     if(errorFetchingData) {
       res.render('post', {
+        title: 'Nathan Broslawsky | nathanbroslawsky.com',
         errorFetchingData: errorFetchingData
       })
     } else {
