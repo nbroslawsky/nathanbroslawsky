@@ -50,7 +50,7 @@ app.get('/', function (req, res, next) {
 
     res.render('home', {
       title: 'Nathan Broslawsky | nathanbroslawsky.com',
-      homeStories: results && results.stories.slice(0, 3),
+      homeStories: !errorFetchingData && results.stories.slice(0, 3),
       protocol: req.originalUrl,
       errorFetchingData: errorFetchingData
     })
