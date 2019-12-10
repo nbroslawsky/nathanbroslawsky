@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 })
 
 app.engine('.hbs', exphbs({
-  defaultLayout: 'main',
+  defaultLayout: 'redesign',
   extname: '.hbs',
   partialsDir: 'views/components/',
   helpers: {
@@ -46,8 +46,7 @@ app.get('/', function (req, res, next) {
     res.render('home', {
       title: 'Nathan Broslawsky | nathanbroslawsky.com',
       homeStories: results.stories.slice(0, 3),
-      protocol: req.originalUrl,
-      layout: 'redesign'
+      protocol: req.originalUrl
     })
   })
 })
@@ -66,8 +65,7 @@ app.get('/blog.rss', function(req, res, next) {
 app.get('/about', function (req, res, next) {
   res.render('about', {
     title: 'Nathan Broslawsky | nathanbroslawsky.com',
-    protocol: req.originalUrl,
-    layout: 'redesign'
+    protocol: req.originalUrl
   })
 })
 
@@ -79,8 +77,7 @@ app.get('/blog', function (req, res, next) {
     res.render('masonry', {
       title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
       stories: results.stories,
-      params: req.query,
-      layout: 'redesign'
+      params: req.query
     })
   })
 })
@@ -99,17 +96,21 @@ app.get('/blog/:slug', function (req, res, next) {
       	prev: dataCalls.getPrevStory(results.story.id, results.links),
       	next: dataCalls.getNextStory(results.story.id, results.links),
       },
-      params: req.query,
-      layout: 'redesign'
+      params: req.query
     })
+  })
+})
+
+app.get('/clear_cache', function (req, res, next) {
+  dataCalls.clearCache(function(err) {
+    res.send('Cache cleared')
   })
 })
 
 app.get('*', function (req, res, next) {
   res.statusCode = 404
   res.render('404', {
-    title: 'Page Not Found | Nathan Broslawsky | nathanbroslawsky.com',
-    layout: 'redesign'
+    title: 'Page Not Found | Nathan Broslawsky | nathanbroslawsky.com'
   })
 })
 

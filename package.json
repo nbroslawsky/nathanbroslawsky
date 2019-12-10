@@ -11,11 +11,9 @@
     "feed": "^4.0.0",
     "marked": "^0.7.0",
     "moment": "^2.24.0",
-    "pug": "^2.0.4",
     "sanitize-html": "^1.20.1",
     "serve-favicon": "^2.5.0",
-    "storyblok-js-client": "^1.0.34",
-    "storyblok-node-client": "^1.0.2",
+    "storyblok-js-client": "^2.0.10",
     "supervisor": "^0.12.0"
   },
   "devDependencies": {
