@@ -85,6 +85,9 @@ app.get('/blog', function (req, res, next) {
   async.parallel({
     stories: dataCalls.stories(req)
   }, function (err, results) {
+
+    console.error('err', err)
+    console.log('results', results)
     
     var errorFetchingData = false
     if (err) {
