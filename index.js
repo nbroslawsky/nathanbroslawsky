@@ -112,7 +112,9 @@ app.get('/blog/:slug', function (req, res, next) {
     }
 
     if(errorFetchingData) {
-      res.statusCode(503).render(500)
+      res.render('post', {
+        errorFetchingData: errorFetchingData
+      })
     } else {
       res.render('post', {
         title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',

@@ -1,3 +1,21 @@
+{{#if errorFetchingData}}
+
+<section class="post-fluid">
+	<div class="container-fluid">
+		<div class="row laread-404">
+			<div class="icon-box">
+				<span class="icon-404"><i class="fa fa-unlink"></i></span>
+			</div>
+			<div class="info-404">
+				<h2>Well, crap.</h2>
+				<p class="text-404">Looks like there's a problem with our blog right now. But don't worry, I'm on the case, and I'll have this content back for you in no time at all.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+{{else}}
+
 {{#section 'head'}}
 	<meta property="og:title" content="{{story.name}} - Nathan Broslawsky" />
 	<meta property="twitter:title" content="{{story.name}}" />
@@ -81,3 +99,5 @@
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d22608ab3d006f4"></script>
+
+{{/if}}
