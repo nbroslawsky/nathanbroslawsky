@@ -1,4 +1,22 @@
 
+{{#if errorFetchingData}}
+
+<section class="post-fluid">
+	<div class="container-fluid">
+		<div class="row laread-404">
+			<div class="icon-box">
+				<span class="icon-404"><i class="fa fa-unlink"></i></span>
+			</div>
+			<div class="info-404">
+				<h2>That wasn't supposed to happen.</h2>
+				<p class="text-404">Looks like something's broken with the blog right now. Please bear with us, as I'm sure alarms are going off somewhere.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+{{else}}
+
 <div class="container">
 	<div class="head-text">
 		<h1 class="head-text-highlight">Blog</h1>
@@ -33,6 +51,8 @@
 		</div>
 	</div>
 </div>
+
+{{/if}}
 
 <ul class="about-social">
 	<li><a href="https://www.linkedin.com/in/broslawsky" target="_blank"><i class="fa fa-linkedin"></i></a></li>

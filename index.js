@@ -42,11 +42,17 @@ app.get('/', function (req, res, next) {
   async.parallel({
     stories: dataCalls.stories(req)
   }, function (err, results) {
-    if (err) return next(err)
+
+    var errorFetchingData = false
+    if (err) {
+      errorFetchingData = true
+    }
+
     res.render('home', {
       title: 'Nathan Broslawsky | nathanbroslawsky.com',
-      homeStories: results.stories.slice(0, 3),
-      protocol: req.originalUrl
+      homeStories: !errorFetchingData && results.stories.slice(0, 3),
+      protocol: req.originalUrl,
+      errorFetchingData: errorFetchingData
     })
   })
 })
@@ -55,7 +61,13 @@ app.get('/blog.rss', function(req, res, next) {
   async.parallel({
     stories: dataCalls.stories(req)
   }, function (err, results) {
-    if (err) return next(err)
+    if (err) {
+      return res
+        .status(503)
+        .set('Content-Type', 'text/plain')
+        .send("Our RSS feed is temporarily down. Please try again in a few minutes. I'm sure alarm bells are going off somewhere...")
+    }
+
     const feed = require('./lib/setup-feed')(results)
     res.set('Content-Type', 'text/xml')
     res.send(feed.rss2())
@@ -73,11 +85,17 @@ app.get('/blog', function (req, res, next) {
   async.parallel({
     stories: dataCalls.stories(req)
   }, function (err, results) {
-    if (err) return next(err)
+
+    var errorFetchingData = false
+    if (err) {
+      errorFetchingData = true
+    }
+
     res.render('masonry', {
       title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
-      stories: results.stories,
-      params: req.query
+      stories: results && results.stories,
+      params: req.query,
+      errorFetchingData: errorFetchingData
     })
   })
 })
@@ -87,17 +105,29 @@ app.get('/blog/:slug', function (req, res, next) {
     story: dataCalls.story(req),
     links: dataCalls.links(req)
   }, function (err, results) {
-    if (err) return next(err)
 
-    res.render('post', {
-      title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
-      story: results.story,
-      readMore: {
-      	prev: dataCalls.getPrevStory(results.story.id, results.links),
-      	next: dataCalls.getNextStory(results.story.id, results.links),
-      },
-      params: req.query
-    })
+    var errorFetchingData = false
+    if (err) {
+      errorFetchingData = true
+    }
+
+    if(errorFetchingData) {
+      res.render('post', {
+        title: 'Nathan Broslawsky | nathanbroslawsky.com',
+        errorFetchingData: errorFetchingData
+      })
+    } else {
+      res.render('post', {
+        title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
+        story: results.story,
+        errorFetchingData: errorFetchingData,
+        readMore: {
+          prev: dataCalls.getPrevStory(results.story.id, results.links),
+          next: dataCalls.getNextStory(results.story.id, results.links),
+        },
+        params: req.query
+      })
+    }
   })
 })
 
