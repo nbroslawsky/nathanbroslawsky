@@ -91,6 +91,8 @@ app.get('/blog', function (req, res, next) {
       errorFetchingData = true
     }
 
+    console.log('error?', errorFetchingData)
+
     res.render('masonry', {
       title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
       stories: results && results.stories,
