@@ -62,7 +62,8 @@ app.get('/blog.rss', function(req, res, next) {
     stories: dataCalls.stories(req)
   }, function (err, results) {
     if (err) {
-      return res.render(500)
+      console.log("there's an issue")
+      return res.render('500', {})
     }
 
     const feed = require('./lib/setup-feed')(results)
