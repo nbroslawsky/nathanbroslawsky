@@ -62,7 +62,10 @@ app.get('/blog.rss', function(req, res, next) {
     stories: dataCalls.stories(req)
   }, function (err, results) {
     if (err) {
-      return res.status(503).render('500', {})
+      return res
+        .status(503)
+        .set('Content-Type', 'text/plain')
+        .send("Our RSS feed is temporarily down. Please try again in a few minutes. I'm sure alarm bells are going off somewhere...")
     }
 
     const feed = require('./lib/setup-feed')(results)
