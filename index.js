@@ -86,15 +86,10 @@ app.get('/blog', function (req, res, next) {
     stories: dataCalls.stories(req)
   }, function (err, results) {
 
-    console.error('err', err)
-    console.log('results', results)
-    
     var errorFetchingData = false
     if (err) {
       errorFetchingData = true
     }
-
-    console.log('error?', errorFetchingData)
 
     res.render('masonry', {
       title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
@@ -111,14 +106,10 @@ app.get('/blog/:slug', function (req, res, next) {
     links: dataCalls.links(req)
   }, function (err, results) {
 
-    console.log('here we are a')
-    
     var errorFetchingData = false
     if (err) {
       errorFetchingData = true
     }
-
-    console.log('here we are b', errorFetchingData)
 
     if(errorFetchingData) {
       res.render('post', {
