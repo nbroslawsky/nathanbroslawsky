@@ -8,6 +8,7 @@ const async = require('async')
 const dataCalls = require('./lib/data')
 const favicon = require('serve-favicon')
 const setupFeed = require('./lib/setup-feed')
+const sendEmail = require('./lib/send-email')
 
 app.use((req, res, next) => {
   if (req.headers['x-forwarded-proto'] === 'http') {
@@ -134,6 +135,13 @@ app.get('/blog/:slug', function (req, res, next) {
 app.get('/clear_cache', function (req, res, next) {
   dataCalls.clearCache(function(err) {
     res.send('Cache cleared')
+  })
+})
+
+app.get('/send_email', function (req, res, next) {
+  sendEmail('nathan@broslawsky.com', "Just wanted to say hi :-)", function(err, data) {
+    res.set('Content-Type', 'text/javascript')
+    res.send(JSON.stringify(data))
   })
 })
 
