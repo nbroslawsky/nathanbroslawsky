@@ -4036,13 +4036,15 @@ a.text-contact:hover,
 	padding-top: 91px;
 	background-color: #fff;
 }
-.archive-search {
+.email-signup {
 	width: 614px;
 	text-align: center;
 	margin: 40px auto 86px;
+}
+.email-signup .form-group {
 	position: relative;
 }
-.archive-search input {
+.email-signup input {
 	border: solid 2px #b3b3b1;
 	box-shadow: none;
 	color: #717171;
@@ -4051,17 +4053,17 @@ a.text-contact:hover,
 	height: 50px;
 	border-radius: 25px;
 }
-.archive-search input:focus + button {
+.email-signup input:focus + button {
 	color: #a28671;
 }
-.archive-search button {
+.email-signup button {
 	position: absolute;
 	right: 0;
 	top: 0;
 	color: #b3b3b1;
 	font-size: 17px;
 }
-.archive-search button:hover {
+.email-signup button:hover {
 	color: #a28671;
 }
 .author-sub {
@@ -9349,7 +9351,7 @@ i.roman {
 	.progress-button + .progress-button {
 		display: none;
 	}
-	.archive-search {
+	.email-signup {
 		width: 80%;
 	}
 }
