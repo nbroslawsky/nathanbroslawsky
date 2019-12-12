@@ -2,7 +2,7 @@ const express = require('express')
 const exphbs = require('express-handlebars')
 const path = require('path')
 const app = express()
-const port = 8080
+const port = require('./lib/get-port')()
 const marked = require('marked')
 const async = require('async')
 const dataCalls = require('./lib/data')
@@ -143,5 +143,7 @@ app.get('*', function (req, res, next) {
     title: 'Page Not Found | Nathan Broslawsky | nathanbroslawsky.com'
   })
 })
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
 
 app.listen(port, () => console.log(`nathanbroslawsky.com [${process.env.NODE_ENV}] is listening on port ${port}!`))

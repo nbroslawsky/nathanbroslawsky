@@ -110,9 +110,9 @@
       $container.masonry()
       e.preventDefault()
     })
-    $('#calendar-widget').zabuto_calendar({
-      today: true
-    })
+    // $('#calendar-widget').zabuto_calendar({
+    //   today: true
+    // })
 
     $('#month-year-tab').on('click', function (e) {
       $('.tab-sub-content.in').collapse('hide')
