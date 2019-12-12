@@ -129,16 +129,111 @@
 	<script src="/files/js/prettify.js"></script>
 	<script src="/files/js/lang-css.js"></script>
 	<script src="/files/js/jquery.blueimp-gallery.min.js"></script>
-	<script src="/files/js/jquery.ellipsis.min.js"></script>
+	<script src="/files/js/imagesloaded.js"></script>
+	<script src="/files/js/masonry.js"></script>
 	<script src="/files/js/jquery.dotdotdot.min.js"></script>
 	<script src="/files/js/jquery.colorbox-min.js"></script>
 	<script src="/files/js/jquery.nicescroll.min.js"></script>
-	<script src="/files/js/imagesloaded.js"></script>
-	<script src="/files/js/masonry.js"></script>
 	<script src="/files/js/viewportchecker.js"></script>
 	<script src="/files/js/isotope.pkgd.min.js"></script>
+	<script src="/files/js/jquery.ellipsis.min.js"></script>
+	<script src="/files/js/modernizr.custom.js"></script>
+	<script src="/files/js/classie.js"></script>
+	<script src="/files/js/uiProgressButton.js"></script>
 	<script src="/files/js/jquery.touchSwipe.min.js"></script>
-	<script src="/files/js/calendar.js"></script>
 	<script src="/files/js/script.js"></script>
+	<script>
+
+		var $form = $('#form-email-signup')
+		var $emailInput = $('input[name="MERGE0"]', $form)
+		var $responseText = $('.response-text', $form)
+
+		$form.submit(function(e) {
+			e.preventDefault()
+			e.stopPropagation()
+
+			var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+			var emailValue = $emailInput.val() || ''
+
+			$responseText.html('')
+			if(!emailRegex.test(emailValue)) {
+				$form.attr("data-verdict","failed-validation")
+				$form.attr("data-response","You must enter a well-formed email address")
+				return false;
+			}
+
+			$.ajax({
+				type: $form.attr('method'),
+				url: $form.attr('action'),
+				data: $form.serialize(),
+				cache: false,
+				dataType: 'jsonp',
+				contentType: "application/json; charset=utf-8",
+				error: function(err) {
+					$form.attr("data-verdict","failed-request")
+					$form.attr("data-response","We had an issue submitting your email address to MailChimp.")
+				},
+				success: function(data) {
+					if(data.result != "success") {
+						$form.attr("data-verdict","failed-request")
+						$form.attr("data-response",data.msg)
+						return
+					}
+
+					$form.attr("data-verdict","success")
+					$form.attr("data-response",data.msg)
+				}
+			})
+		});
+
+		[].slice.call( document.querySelectorAll( '.progress-button' ) ).forEach( function( bttn, pos ) {
+			new UIProgressButton( bttn, {
+				statusTime: 2000,
+				callback : function( instance ) {
+					var progress = 0,
+						interval,
+						statusMap = {
+							'failed-validation': function() {
+								$emailInput.addClass('input-error')
+								$emailInput.one('keypress', function() {
+									$emailInput.removeClass('input-error')
+								})
+								return -1 
+							},
+							'failed-request': function() { return -1 },
+							'success': function() { return 1 }
+						}
+
+					interval = setInterval( function() {
+
+						var verdict = $form.attr("data-verdict")
+						if(verdict && statusMap[verdict]) {
+							instance.setProgress(1)
+							instance.stop(statusMap[verdict]())
+							clearInterval(interval)
+							$form.attr("data-verdict", "")
+							$responseText.html($form.attr("data-response"))
+							$responseText.find('a').each(function(e) {
+								$(this).attr('target','_blank')
+							})
+							return;
+						}
+
+						//implemented a backoff to wait for the xhr call to finish
+						var increment = Math.random() * 0.1
+						increment *= (1-progress)
+						progress = Math.min( progress + increment, .99 );
+						instance.setProgress( progress );
+						if(progress === 1) {
+							instance.stop(-1)
+							clearInterval(interval)
+						}
+
+					}, 100);
+				}
+			});
+		});
+
+	</script>
 </body>
 </html>

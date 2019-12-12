@@ -144,4 +144,6 @@ app.get('*', function (req, res, next) {
   })
 })
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev'
+
 app.listen(port, () => console.log(`nathanbroslawsky.com [${process.env.NODE_ENV}] is listening on port ${port}!`))

@@ -191,6 +191,9 @@ input.form-control:focus {
 	-ms-transition: border 0.3s;
 	transition: border 0.3s;
 }
+input.form-control.input-error {
+	border-color:#cc0000;
+}
 .nopacity{
 	opacity: 0;
 }
@@ -3952,13 +3955,16 @@ a.text-contact:hover,
 	display: inline-block;
 }
 .newsletter-box {
-	width: 370px;
-	margin: 0 auto 58px;
+	/*min-width: 530px;*/
+	margin: 0 0 58px;
+	border:1px solid #ccc;
+	padding: 10px 15px;
+	background-color: #fff;
 }
 .newsletter-box input {
 	border: solid 1px #d7d7d7;
-	width: 263px;
-	height: 45px;
+	width: 410px;
+	height: 70px;
 	padding: 0 20px;
 	color: #787878;
 	float: left;
@@ -3972,6 +3978,21 @@ a.text-contact:hover,
 	-webkit-appearance: none;
 	border-radius: 0;
 }
+.newsletter-box form {
+	margin: 0 auto 0 auto;
+	padding: 0 0 0 0;
+}
+.newsletter-box .progress-button {
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.newsletter-box.blog-signup input {
+	margin-top:0px;
+}
+.newsletter-box .response-text {
+	margin-top:12px;
+	margin-bottom:0px;
+}
 .newsletter-box.on-focus input {
 	margin-left: 0;
 	margin-right: 4px;
@@ -3981,6 +4002,8 @@ a.text-contact:hover,
 	float: left;
 	opacity: 0;
 	margin-right: -47px;
+	width:70px;
+	height:70px;
 	visibility: hidden;
 	-webkit-transition: all .3s ease-in-out;
 	-moz-transition: all .3s ease-in-out;
