@@ -49,8 +49,9 @@ app.get('/', function (req, res, next) {
     }
 
     res.render('home', {
+      year: (new Date()).getFullYear(),
       title: 'Nathan Broslawsky | nathanbroslawsky.com',
-      homeStories: !errorFetchingData && results.stories.slice(0, 3),
+      homeStories: !errorFetchingData && results.stories,
       protocol: req.originalUrl,
       errorFetchingData: errorFetchingData
     })
@@ -76,6 +77,7 @@ app.get('/blog.rss', function(req, res, next) {
 
 app.get('/about', function (req, res, next) {
   res.render('about', {
+    year: (new Date()).getFullYear(),
     title: 'Nathan Broslawsky | nathanbroslawsky.com',
     protocol: req.originalUrl
   })
@@ -92,6 +94,7 @@ app.get('/blog', function (req, res, next) {
     }
 
     res.render('masonry', {
+      year: (new Date()).getFullYear(),
       title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
       stories: results && results.stories,
       params: req.query,
@@ -113,11 +116,13 @@ app.get('/blog/:slug', function (req, res, next) {
 
     if(errorFetchingData) {
       res.render('post', {
+        year: (new Date()).getFullYear(),
         title: 'Nathan Broslawsky | nathanbroslawsky.com',
         errorFetchingData: errorFetchingData
       })
     } else {
       res.render('post', {
+        year: (new Date()).getFullYear(),
         title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
         story: results.story,
         errorFetchingData: errorFetchingData,
@@ -140,6 +145,7 @@ app.get('/clear_cache', function (req, res, next) {
 app.get('*', function (req, res, next) {
   res.statusCode = 404
   res.render('404', {
+    year: (new Date()).getFullYear(),
     title: 'Page Not Found | Nathan Broslawsky | nathanbroslawsky.com'
   })
 })

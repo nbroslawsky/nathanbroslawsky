@@ -1,2 +1,3 @@
 /secrets/*
 /.port
+.DS_Store

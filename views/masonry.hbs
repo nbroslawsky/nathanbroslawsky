@@ -28,21 +28,23 @@
 
 			{{#each stories}}
 			<div class="col-md-4 masonry-row col-sm-6" data-url="{{preview.url}}">
-				{{#if preview.image}}
-				<a href="{{preview.url}}"><img src="{{preview.image}}" alt=""></a>
-				{{!-- <img src="{{preview.image}}" alt=""> --}}
-				{{else}}
-				<a href="{{preview.url}}" class="medium-date">
-					<div class="medium-date-day">{{view.date}}</div>
-					<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
-				</a>
-				{{/if}}
-				
-				<div class="masonry-content">
-					<a href="{{preview.url}}">{{name}}</a>
-					<p class="spot ellipsis-readmore">{{preview.sanitized}} <a href="{{preview.url}}" class="more">»</a></p>
-					<div class="links">
-						<span>{{view.fulldate}}</span>
+				<div class="masonry-inner-container">
+					{{#if preview.image}}
+					<a href="{{preview.url}}"><img src="{{preview.image}}" alt=""></a>
+					{{!-- <img src="{{preview.image}}" alt=""> --}}
+					{{else}}
+					<a href="{{preview.url}}" class="medium-date">
+						<div class="medium-date-day">{{view.date}}</div>
+						<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
+					</a>
+					{{/if}}
+					
+					<div class="masonry-content">
+						<a href="{{preview.url}}">{{name}}</a>
+						<p class="spot ellipsis-readmore">{{preview.sanitized}} <a href="{{preview.url}}" class="more">»</a></p>
+						<div class="links">
+							<span>{{view.fulldate}}</span>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -2,10 +2,10 @@
 
 	<div class="head-about">
 		<h1 class="about-h1">Nathan Broslawsky</h1>
-		<p class="lead about-lead">Engineering Leader. Polymath. Optimist.</p>
-		<div class="row cover-photo">
-			<img src="/files/img/mccloud-falls.jpg" alt="">
-			{{!-- <div class="attribution">Photo by Nathan Broslawsky</div> --}}
+		<p class="lead about-lead">{&nbsp;Engineering Leader, Polymath, Optimist&nbsp;}</p>
+		<div class="leading-sweep">
+			<p class="leading-sweep-intro">For motorcyclists, "Riding Sweep" means being the last bike on a group ride. The "sweep" ensures everyone else on the ride arrives at their destination safely.</p>
+			<p class="leading-sweep-body">These same principles and philosophies carry forward into  leadership and the way I choose to coach and mentor others: let others take the lead, have your team's back, and remain handy with a wrench if needed. "Leading Sweep" is a collection of articles diving deeper into how to grow and lead teams and other leaders in the same spirit.</p>
 		</div>
 	</div>
 </div>
@@ -16,21 +16,23 @@
 
 			{{#each homeStories}}
 			<div class="col-md-4 masonry-row col-sm-6" data-url="{{preview.url}}">
-				{{#if preview.image}}
-				<a href="{{preview.url}}"><img src="{{preview.image}}" alt=""></a>
-				{{!-- <img src="{{preview.image}}" alt=""> --}}
-				{{else}}
-				<a href="{{preview.url}}" class="medium-date">
-					<div class="medium-date-day">{{view.date}}</div>
-					<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
-				</a>
-				{{/if}}
-				
-				<div class="masonry-content">
-					<a href="{{preview.url}}">{{name}}</a>
-					<p class="spot ellipsis-readmore">{{preview.sanitized}} <a href="{{preview.url}}" class="more">»</a></p>
-					<div class="links">
-						<span>{{view.fulldate}}</span>
+				<div class="masonry-inner-container">
+					{{#if preview.image}}
+					<a href="{{preview.url}}"><img src="{{preview.image}}" alt=""></a>
+					{{!-- <img src="{{preview.image}}" alt=""> --}}
+					{{else}}
+					<a href="{{preview.url}}" class="medium-date">
+						<div class="medium-date-day">{{view.date}}</div>
+						<div class="medium-date-month">{{view.month}}, {{view.year}}</div>
+					</a>
+					{{/if}}
+					
+					<div class="masonry-content">
+						<a href="{{preview.url}}">{{name}}</a>
+						<p class="spot ellipsis-readmore">{{preview.sanitized}} <a href="{{preview.url}}" class="more">»</a></p>
+						<div class="links">
+							<span>{{view.fulldate}}</span>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -41,9 +43,9 @@
 </div>
 
 
-<ul class="about-social">
+{{!-- <ul class="about-social">
 	<li><a href="https://www.linkedin.com/in/broslawsky" target="_blank"><i class="fa fa-linkedin"></i></a></li>
 	<li><a href="https://www.twitter.com/nbroslawsky" target="_blank"><i class="fa fa-twitter"></i></a></li>
 	<li><a href="https://www.github.com/nbroslawsky" target="_blank"><i class="fa fa-github"></i></a></li>
 	<li><a href="/blog.rss" target="_blank"><i class="fa fa-rss"></i></a></li>
-</ul>
+</ul> --}}
