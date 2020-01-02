@@ -982,6 +982,14 @@ body.is-push-bar-full {
 	padding: 0px 104px 20px 0px; /* 31px 104px 20px */
 	position: relative;
 }
+.post-item-paragraph h1,
+.post-item-paragraph h2,
+.post-item-paragraph h3,
+.post-item-paragraph h4,
+.post-item-paragraph h5,
+.post-item-paragraph h6 {
+	line-height: inherit;
+}
 .post-item-paragraph h2 {
 	font-size: 26px;
 	line-height: 34px;
@@ -1071,7 +1079,7 @@ body.is-push-bar-full {
 }
 .post-item-paragraph p {
 	color: #000000;
-	text-align: justify;
+	text-align: left;
 	line-height: 26px;
 	margin-bottom: 20px;
 	font-weight: 400;
@@ -1079,7 +1087,7 @@ body.is-push-bar-full {
 
 .post-item-paragraph ul {
 	color: #000000;
-	text-align: justify;
+	text-align: left;
 	line-height: 26px;
 	margin-bottom: 20px;
 	font-weight: 400;
@@ -9471,7 +9479,7 @@ i.roman {
 		margin-top: 0;
 	}
 	.post-item-detail .post-item-paragraph p {
-		text-align: justify;
+		text-align: left;
 	}
 	.post-item-centered .post-item-info {
 		margin-right: 0;
