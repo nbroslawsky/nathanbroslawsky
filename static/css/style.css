@@ -300,6 +300,7 @@ div.cover-photo .attribution {
 	padding: 0;
 	height: 128px;
 	height: auto;
+	margin-left:0px;
 }
 .navbar-laread .nav {
 	float: none;
