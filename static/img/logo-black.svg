@@ -4,7 +4,7 @@
     <g id="Layer1">
         <rect x="-4.733" y="-5.701" width="321.761" height="321.678"/>
     </g>
-    <g transform="matrix(0.649538,0,0,0.649538,-1084.4,-208.92)">
+    <g transform="matrix(0.649538,0,0,0.649538,-1083.88,-224.768)">
         <g transform="matrix(1.04149,0,0,1.04149,1226.71,-90.2405)">
             <path d="M510.257,523.566C487.866,493.645 526.957,465.506 550.528,486.197" style="fill:none;stroke:white;stroke-width:6.16px;"/>
         </g>
@@ -48,7 +48,7 @@
             <path d="M579.958,650.653C589.568,654.747 599.645,657.3 610.7,656.62" style="fill:none;stroke:white;stroke-width:6.16px;"/>
         </g>
     </g>
-    <g transform="matrix(0.649538,0,0,0.649538,-1084.4,-208.92)">
+    <g transform="matrix(0.649538,0,0,0.649538,-1083.88,-224.768)">
         <g transform="matrix(1.0998,0,0,1.0998,1206.62,-127.837)">
             <path d="M634.914,526.521L634.914,506.596L648.388,493.122L660.882,493.122L674.652,479.352L696.536,479.352L709.365,492.181L739.16,492.181L754.494,507.515L744.222,517.786L766.698,517.786L793.302,544.39L793.302,570.42L778.358,585.364L790.796,572.926L801.019,572.926L818.922,590.829L818.922,608.166L794.298,625.824L814.265,648.328L789.062,671.004L765.908,670.969L728.717,656.987L765.908,670.969L714.659,671.071L674.735,671.15L688.322,657.562L674.735,671.15L649.946,671.293L633.952,657.218L634.352,602.92L652.552,584.195L634.6,566.293L634.914,526.521Z" style="fill:none;stroke:white;stroke-width:5.83px;"/>
         </g>
@@ -92,7 +92,8 @@
             <circle cx="665.597" cy="511.867" r="3.476" style="fill:none;stroke:white;stroke-width:1.85px;"/>
         </g>
     </g>
-    <g transform="matrix(2.24707,0,0,2.24707,-173.137,-127.057)">
-        <text x="76.468px" y="160.384px" style="font-family:'BanglaSangamMN-Bold', 'Bangla Sangam MN';font-weight:700;font-size:16.667px;fill:white;">LEADING SWEEP</text>
+    <g transform="matrix(2.65588,0,0,2.24707,-204.467,-142.905)">
+        <text x="97.908px" y="160.384px" style="font-family:'BanglaSangamMN-Bold', 'Bangla Sangam MN';font-weight:700;font-size:16.667px;fill:white;">NATHAN</text>
+        <text x="76.468px" y="179.003px" style="font-family:'BanglaSangamMN-Bold', 'Bangla Sangam MN';font-weight:700;font-size:16.667px;fill:white;">BROSLAWSKY</text>
     </g>
 </svg>

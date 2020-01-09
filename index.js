@@ -83,24 +83,35 @@ app.get('/about', function (req, res, next) {
   })
 })
 
-app.get('/blog', function (req, res, next) {
-  async.parallel({
-    stories: dataCalls.stories(req)
-  }, function (err, results) {
-
-    var errorFetchingData = false
-    if (err) {
-      errorFetchingData = true
-    }
-
-    res.render('masonry', {
-      year: (new Date()).getFullYear(),
-      title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
-      stories: results && results.stories,
-      params: req.query,
-      errorFetchingData: errorFetchingData
-    })
+app.get('/newsletter', function (req, res, next) {
+  res.render('newsletter', {
+    year: (new Date()).getFullYear(),
+    title: 'Newsletter | nathanbroslawsky.com',
+    protocol: req.originalUrl
   })
+})
+
+app.get('/blog', function (req, res, next) {
+
+  res.redirect(301, "/")
+
+  // async.parallel({
+  //   stories: dataCalls.stories(req)
+  // }, function (err, results) {
+
+  //   var errorFetchingData = false
+  //   if (err) {
+  //     errorFetchingData = true
+  //   }
+
+  //   res.render('masonry', {
+  //     year: (new Date()).getFullYear(),
+  //     title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
+  //     stories: results && results.stories,
+  //     params: req.query,
+  //     errorFetchingData: errorFetchingData
+  //   })
+  // })
 })
 
 app.get('/blog/:slug', function (req, res, next) {

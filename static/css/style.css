@@ -129,22 +129,24 @@ p {
 	line-height: 26px;
 }
 .head-text {
-	padding: 60px 0 48px;
-	text-align: center;
+	padding: 12px 0 12px;
+	text-align: left;
 }
 .head-text h1 {
-	font-size: 49px;
+	font-size: 38px;
 	line-height: 1;
 	margin-bottom: 17px;
+	font-weight:600;
+	margin-left: -15px;
 }
 .head-text h1.head-text-highlight {
 	color: #000000; /* old: #a28671 */
-	font-weight: 300;
+	font-weight: 600;
 	margin-bottom: 28px;
 }
 .text-highlight h1 {
 	color: #000000; /* old: #a28671 */
-	font-weight: 300;
+	font-weight: 600;
 	font-size: 38px;
 }
 .text-highlight .lead-text {
@@ -648,7 +650,7 @@ body.is-push-bar-full {
 	z-index: 2;
 	min-height: 100%;
 	background: #FFFFFF; /* old: #f3f3f3 */
-	padding-top: 63px;
+	padding-top: 128px;
 	z-index: 1000;
 	-webkit-transition: -webkit-transform .33s cubic-bezier(.33,0,.2,1);
 	-moz-transition: -moz-transform .33s cubic-bezier(.33,0,.2,1);
@@ -3359,6 +3361,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 .head-author .basic-info {
 	margin-bottom: 8px;
 }
+
 .author-h1,
 .archive-h1 {
 	font-size: 38px;
@@ -3541,7 +3544,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 
 /********** 2.4.3 About - Start **********/
 .head-about {
-	padding: 92px 15px 12px;
+	padding: 12px 15px 12px;
 	text-align: center;
 }
 .head-about .basic-info {
@@ -3606,6 +3609,9 @@ input:focus, button:focus, select:focus, textarea:focus {
 	color: #000000; /* old: #787878 */
 	font-size: 16px;
 	margin-bottom: 50px;
+}
+.laread-about p.left {
+	text-align: left;
 }
 p.basic-info {
 	font-size: 16px;
@@ -4009,10 +4015,10 @@ a.text-contact:hover,
 }
 .newsletter-box {
 	/*min-width: 530px;*/
-	margin: 0 0 58px;
-	border:1px solid #ccc;
-	padding: 10px 15px;
-	background-color: #e8e8e8;
+	margin: 0 0 0 0;
+	border-top:1px solid #ccc;
+	padding: 40px 0px 20px 0;
+	/*background-color: #e8e8e8;*/
 }
 .newsletter-box input {
 	border: solid 1px #d7d7d7;
@@ -8088,8 +8094,9 @@ i.roman {
 		display: none;
 	}
 	.canvas {
-		padding: 63px 0 0;
+		padding: 128px 0 0;
 	}
+	.head-text h1 {margin-left:0;}
 	.more-down {
 		margin-top: 50px;
 	}
