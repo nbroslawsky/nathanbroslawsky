@@ -3038,7 +3038,7 @@ a.medium-date:hover {
 	font-weight: 500;
 }
 .masonry .masonry-row .masonry-content > a:hover {
-	color: #987357;
+	/*color: #987357;*/
 	text-decoration: none;
 }
 .masonry .masonry-row .masonry-content > p.spot {
