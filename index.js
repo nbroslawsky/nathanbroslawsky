@@ -19,8 +19,8 @@ app.use((req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  console.log(process.env.NODE_ENV, req.headers.host.substring(4))
-  if(process.env.NODE_ENV === 'production' && req.headers.host.substring(4) !== 'www.') {
+  console.log(process.env.NODE_ENV, req.headers.host.substring(0, 4))
+  if(process.env.NODE_ENV === 'production' && req.headers.host.substring(0, 4) !== 'www.') {
     // res.redirect('https://www.' + req.headers.host + req.url)
     console.log(req.headers.host.substring(4), 'https://www.' + req.headers.host + req.url)
     next()
