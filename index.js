@@ -19,7 +19,6 @@ app.use((req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  console.log(req.headers.host)
   if(req.headers.host === 'nathanbroslawsky.com') { // that is, without the www.
     res.redirect('https://www.' + req.headers.host + req.url)
   } else {
