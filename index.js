@@ -18,6 +18,16 @@ app.use((req, res, next) => {
   }
 })
 
+app.use((req, res, next) => {
+  if(process.env.NODE_ENV === 'production' && req.headers.host.substring(4) !== 'www.') {
+    // res.redirect('https://www.' + req.headers.host + req.url)
+    console.log(req.headers.host.substring(4), 'https://www.' + req.headers.host + req.url)
+    next()
+  } else {
+    next()
+  }
+})
+
 app.engine('.hbs', exphbs({
   defaultLayout: 'redesign',
   extname: '.hbs',
