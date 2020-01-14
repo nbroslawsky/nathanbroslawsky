@@ -134,6 +134,12 @@ app.get('/blog/:slug', function (req, res, next) {
     }
 
     if(errorFetchingData) {
+
+      var status = err.response && err.response.status || null
+      if(status == 404) {
+        return next()
+      }
+
       res.render('post', {
         year: (new Date()).getFullYear(),
         title: 'Nathan Broslawsky | nathanbroslawsky.com',
