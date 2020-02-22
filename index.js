@@ -48,7 +48,7 @@ app.use(favicon(path.join(__dirname, 'static', 'img', 'favicon.ico')))
 
 app.get('/', function (req, res, next) {
   async.parallel({
-    stories: dataCalls.stories(req)
+    stories: dataCalls.stories(req, { width: 358 })
   }, function (err, results) {
 
     var errorFetchingData = false
