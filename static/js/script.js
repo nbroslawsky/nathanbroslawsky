@@ -651,3 +651,20 @@ function hasScrolled () {
 
   lastScrollTop = st
 }
+
+// link handling throughout site
+$(function() {
+  var current = window.location.protocol + '//' + window.location.host + '/'
+  var $externalPostlinks = $('.post-item a')
+    .filter(function() {
+      var isAbsoluteRegex = /^(http:|https:)?\/\//
+      var isRelative = !this.href.match(isAbsoluteRegex)
+      if(isRelative || this.href.substr(0,current.length) == current) {
+        return false
+      }
+      return true
+    })
+    .each(function() {
+      $(this).attr('target','_blank').attr('rel','nofollow')
+    })
+})
