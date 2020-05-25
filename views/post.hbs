@@ -64,6 +64,9 @@
 							{{/story.content}}
 						</div>
 						<div class="post-item-paragraph">
+							<div id="replybox"></div>
+						</div>
+						<div class="post-item-paragraph">
 							{{> signup }}
 						</div>
 						<div class="post-item-paragraph">
@@ -111,5 +114,12 @@
 
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d22608ab3d006f4"></script>
+<script>
+window.replybox = {
+	site: '0mABPxdByG',
+	identifier: "{{story.full_slug}}"
+};
+</script>
+<script src="https://cdn.getreplybox.com/js/embed.js"></script>
 
 {{/if}}
