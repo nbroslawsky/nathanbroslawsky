@@ -123,7 +123,7 @@ body {
 body.noscroll > div:not(.quick-read){
 	display: none;
 }
-p, .line-item-paragraph {
+p, .post-item-paragraph {
 	font-size: 15px;
 	color: #4d4d4f;
 	line-height: 26px;
@@ -7086,11 +7086,14 @@ body .qr-black-theme,
 .post-item-paragraph blockquote {
 	border-left: solid 2px #b3b3b1;
 	padding-top: 0;
+	margin-top:5px;
+	margin-left:10%;
+	margin-right:10%;
 }
 .post-item-paragraph blockquote p {
-	font-size: 24px;
+	font-size: 20px;
 	color: #000000; /* old: #a28671 */
-	line-height: 40px;
+	line-height: 36px;
 	font-weight: 300;
 }
 .post-item-paragraph blockquote p i {
