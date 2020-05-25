@@ -123,7 +123,7 @@ body {
 body.noscroll > div:not(.quick-read){
 	display: none;
 }
-p {
+p, .line-item-paragraph {
 	font-size: 15px;
 	color: #4d4d4f;
 	line-height: 26px;
@@ -1087,7 +1087,8 @@ body.is-push-bar-full {
 	font-weight: 400;
 }
 
-.post-item-paragraph ul {
+.post-item-paragraph ul,
+.post-item-paragraph ol {
 	color: #000000;
 	text-align: left;
 	line-height: 26px;
