@@ -108,7 +108,7 @@ app.get('/blog/:slug', function (req, res, next) {
       dataCalls.story(req.params.slug),
       dataCalls.getPrevStory(req.params.slug),
       dataCalls.getNextStory(req.params.slug)
-    ])  
+    ])
     .then(([story,prev,next]) => {
 
       res.render('post', {
@@ -123,7 +123,7 @@ app.get('/blog/:slug', function (req, res, next) {
     .catch(err => {
       console.error('[Page Load Error]', err)
 
-      var status = err.response && err.response.status || null
+      var status = err.status || null
       if(status == 404) {
         return next()
       }
