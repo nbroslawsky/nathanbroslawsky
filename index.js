@@ -3,7 +3,6 @@ const exphbs = require('express-handlebars')
 const path = require('path')
 const app = express()
 const port = require('./lib/get-port')()
-const marked = require('marked')
 const async = require('async')
 const dataCalls = require('./lib/data')
 const favicon = require('serve-favicon')
@@ -31,9 +30,6 @@ app.engine('.hbs', exphbs({
   extname: '.hbs',
   partialsDir: 'views/components/',
   helpers: {
-    marked: function (text) {
-      return marked(text)
-    },
     section: function (name, options) {
       if (!this._sections) this._sections = {}
       this._sections[name] = options.fn(this)
@@ -108,22 +104,19 @@ app.get('/blog', function (req, res, next) {
 
 app.get('/blog/:slug', function (req, res, next) {
 
-  Promise.all([dataCalls.story(req.params.slug)])
-    .then(responses => {
-
-      // console.log('responses', JSON.stringify(responses, undefined, 4))
-
-      let story = responses[0]
+  Promise.all([
+      dataCalls.story(req.params.slug),
+      dataCalls.getPrevStory(req.params.slug),
+      dataCalls.getNextStory(req.params.slug)
+    ])  
+    .then(([story,prev,next]) => {
 
       res.render('post', {
         year: (new Date()).getFullYear(),
         title: story.fields.title + ' | Nathan Broslawsky | nathanbroslawsky.com',
         story: story,
         errorFetchingData: false,
-        readMore: {
-          prev: dataCalls.getPrevStory(story.id, /*links*/ {}),
-          next: dataCalls.getNextStory(story.id, /*links*/ {}),
-        },
+        readMore: { prev: prev, next: next },
         params: req.query
       })
     })
@@ -144,9 +137,8 @@ app.get('/blog/:slug', function (req, res, next) {
 })
 
 app.get('/clear_cache', function (req, res, next) {
-  dataCalls.clearCache(function(err) {
-    res.send('Cache cleared')
-  })
+  dataCalls.clearCache()
+  res.send('Cache cleared')
 })
 
 app.get('*', function (req, res, next) {
