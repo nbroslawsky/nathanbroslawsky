@@ -44,7 +44,7 @@ app.use(favicon(path.join(__dirname, 'static', 'img', 'favicon.ico')))
 
 app.get('/', function (req, res, next) {
 
-  dataCalls.stories(req)
+  dataCalls.stories()
     .then(stories => {
       res.render('home', {
         year: (new Date()).getFullYear(),
@@ -138,6 +138,7 @@ app.get('/blog/:slug', function (req, res, next) {
 
 app.get('/clear_cache', function (req, res, next) {
   dataCalls.clearCache()
+  console.log('[Clearing cache]')
   res.send('Cache cleared')
 })
 
