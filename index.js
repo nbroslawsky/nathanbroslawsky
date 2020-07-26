@@ -47,40 +47,42 @@ app.use('/files', express.static(path.join(__dirname, 'static')))
 app.use(favicon(path.join(__dirname, 'static', 'img', 'favicon.ico')))
 
 app.get('/', function (req, res, next) {
-  async.parallel({
-    stories: dataCalls.stories(req, { width: 358 })
-  }, function (err, results) {
 
-    var errorFetchingData = false
-    if (err) {
-      errorFetchingData = true
-    }
-
-    res.render('home', {
-      year: (new Date()).getFullYear(),
-      title: 'Nathan Broslawsky | nathanbroslawsky.com',
-      homeStories: !errorFetchingData && results.stories,
-      protocol: req.originalUrl,
-      errorFetchingData: errorFetchingData
+  dataCalls.stories(req)
+    .then(stories => {
+      res.render('home', {
+        year: (new Date()).getFullYear(),
+        title: 'Nathan Broslawsky | nathanbroslawsky.com',
+        homeStories: stories,
+        protocol: req.originalUrl,
+        errorFetchingData: false
+      })
     })
-  })
+    .catch(error => {
+      res.render('home', {
+        year: (new Date()).getFullYear(),
+        title: 'Nathan Broslawsky | nathanbroslawsky.com',
+        protocol: req.originalUrl,
+        errorFetchingData: true
+      })
+    })
+
 })
 
 app.get('/blog.rss', function(req, res, next) {
-  async.parallel({
-    stories: dataCalls.stories(req)
-  }, function (err, results) {
-    if (err) {
-      return res
+
+  dataCalls.stories()
+    .then(stories => {
+      const feed = require('./lib/setup-feed')(stories)
+      res.set('Content-Type', 'text/xml')
+      res.send(feed.rss2())
+    })
+    .catch(err => {
+      res
         .status(503)
         .set('Content-Type', 'text/plain')
         .send("Our RSS feed is temporarily down. Please try again in a few minutes. I'm sure alarm bells are going off somewhere...")
-    }
-
-    const feed = require('./lib/setup-feed')(results)
-    res.set('Content-Type', 'text/xml')
-    res.send(feed.rss2())
-  })
+    })
 })
 
 app.get('/about', function (req, res, next) {
@@ -102,38 +104,31 @@ app.get('/newsletter', function (req, res, next) {
 app.get('/blog', function (req, res, next) {
 
   res.redirect(301, "/")
-
-  // async.parallel({
-  //   stories: dataCalls.stories(req)
-  // }, function (err, results) {
-
-  //   var errorFetchingData = false
-  //   if (err) {
-  //     errorFetchingData = true
-  //   }
-
-  //   res.render('masonry', {
-  //     year: (new Date()).getFullYear(),
-  //     title: 'Blog | Nathan Broslawsky | nathanbroslawsky.com',
-  //     stories: results && results.stories,
-  //     params: req.query,
-  //     errorFetchingData: errorFetchingData
-  //   })
-  // })
 })
 
 app.get('/blog/:slug', function (req, res, next) {
-  async.parallel({
-    story: dataCalls.story(req),
-    links: dataCalls.links(req)
-  }, function (err, results) {
 
-    var errorFetchingData = false
-    if (err) {
-      errorFetchingData = true
-    }
+  Promise.all([dataCalls.story(req.params.slug)])
+    .then(responses => {
 
-    if(errorFetchingData) {
+      // console.log('responses', JSON.stringify(responses, undefined, 4))
+
+      let story = responses[0]
+
+      res.render('post', {
+        year: (new Date()).getFullYear(),
+        title: story.fields.title + ' | Nathan Broslawsky | nathanbroslawsky.com',
+        story: story,
+        errorFetchingData: false,
+        readMore: {
+          prev: dataCalls.getPrevStory(story.id, /*links*/ {}),
+          next: dataCalls.getNextStory(story.id, /*links*/ {}),
+        },
+        params: req.query
+      })
+    })
+    .catch(err => {
+      console.error('[Page Load Error]', err)
 
       var status = err.response && err.response.status || null
       if(status == 404) {
@@ -143,22 +138,9 @@ app.get('/blog/:slug', function (req, res, next) {
       res.render('post', {
         year: (new Date()).getFullYear(),
         title: 'Nathan Broslawsky | nathanbroslawsky.com',
-        errorFetchingData: errorFetchingData
+        errorFetchingData: true
       })
-    } else {
-      res.render('post', {
-        year: (new Date()).getFullYear(),
-        title: results.story.name + ' | Nathan Broslawsky | nathanbroslawsky.com',
-        story: results.story,
-        errorFetchingData: errorFetchingData,
-        readMore: {
-          prev: dataCalls.getPrevStory(results.story.id, results.links),
-          next: dataCalls.getNextStory(results.story.id, results.links),
-        },
-        params: req.query
-      })
-    }
-  })
+    })
 })
 
 app.get('/clear_cache', function (req, res, next) {
