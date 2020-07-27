@@ -1109,8 +1109,10 @@ body.is-push-bar-full {
 	padding-bottom: 14px;
 	display: inline-block;
 }
-.post-item-paragraph img {
+.post-item-paragraph img.content-img {
 	max-width:100%;
+	margin-bottom:20px;
+	border:1px solid #333333;
 }
 /* (Special Type) Content */
 /* Caruosel */
