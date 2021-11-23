@@ -1098,6 +1098,9 @@ body.is-push-bar-full {
 .post-item-detail .post-item-paragraph p {
 	text-align: left;
 }
+.post-item-detail .post-item-paragraph li p {
+	margin-bottom: 0;
+}
 .post-item-paragraph p + h2,
 .post-item-paragraph p + h3,
 .post-item-paragraph p + h4,
