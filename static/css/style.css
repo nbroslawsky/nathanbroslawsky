@@ -112,7 +112,7 @@ p, .post-item-paragraph {
 }
 .head-text h1 {
 	font-size: 38px;
-	line-height: 1;
+	line-height: 1.2;
 	margin-bottom: 17px;
 	font-weight:600;
 	margin-left: -15px;
@@ -3227,7 +3227,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 .about-h1 {
 	font-size: 38px;
 	color: #000000; /* old: #a28671 */
-	font-weight: 600;
+	font-weight: 500;
 	margin-bottom: 18px;
 	text-align:left;
 }
