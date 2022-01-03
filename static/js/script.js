@@ -382,8 +382,8 @@
     })
     /*! masonry isotope */
 
-    $('.masonry-row[data-url]').on('click', function () {
-      document.location.href = $(this).data('url')
+    $('.masonry-row[data-url] .masonry-content').on('click', function () {
+      document.location.href = $(this).parents('.masonry-row[data-url]').data('url')
     })
 
     /* big gallery isotope */

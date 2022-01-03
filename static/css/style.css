@@ -79,26 +79,6 @@ Author :  Evmet
 	font-weight: normal;
 	font-style: normal;
 }
-@font-face {
-	font-family: 'robotoregular';
-	src: url('../fonts/Roboto-Regular-webfont.eot');
-	src: url('../fonts/Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/Roboto-Regular-webfont.svg#robotoregular') format('svg'),
-		 url('../fonts/Roboto-Regular-webfont.woff') format('woff'),
-		 url('../fonts/Roboto-Regular-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-@font-face {
-	font-family: 'robotolight';
-	src: url('../fonts/Roboto-Light-webfont.eot');
-	src: url('../fonts/Roboto-Light-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../fonts/Roboto-Light-webfont.svg#robotolight') format('svg'),
-		 url('../fonts/Roboto-Light-webfont.woff') format('woff'),
-		 url('../fonts/Roboto-Light-webfont.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
 /********** 1.1 Font Faces - Finish **********/
 
 /********** 1.2 Common Style - Start **********/
@@ -110,7 +90,7 @@ html {
 }
 body {
 	height: 100%;
-	font-family: Raleway;
+	font-family: Noto Sans;
 	color:#000000; /* old: 3d3d3f */
 	font-size: 14px;
 	-webkit-font-smoothing: subpixel-antialiased;
@@ -120,11 +100,9 @@ body {
 	-o-font-smoothing : antialiased;
 	font-smoothing : antialiased;
 }
-body.noscroll > div:not(.quick-read){
-	display: none;
-}
+
 p, .post-item-paragraph {
-	font-size: 15px;
+	font-size: 16px;
 	color: #4d4d4f;
 	line-height: 26px;
 }
@@ -146,7 +124,7 @@ p, .post-item-paragraph {
 }
 .text-highlight h1 {
 	color: #000000; /* old: #a28671 */
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 38px;
 }
 .text-highlight .lead-text {
@@ -164,6 +142,17 @@ h3 { font-size: 20px; font-weight: 400; }
 h4 { font-size: 18px; font-weight: 400; }
 h5 { font-size: 16px; font-weight: 600; }
 h6 { font-size: 16px; font-weight: 500; text-transform: uppercase; }
+
+cite {
+	font-style: normal;
+	color: #666666;
+	display: block;
+	margin-bottom: 10px;
+}
+
+cite a {
+	text-decoration: underline;
+}
 
 .block-overlay {
 	padding-bottom: 60px;
@@ -1084,7 +1073,7 @@ body.is-push-bar-full {
 	text-align: left;
 	line-height: 26px;
 	margin-bottom: 20px;
-	font-weight: 400;
+	font-weight: 200;
 }
 
 .post-item-paragraph ul,
@@ -1440,7 +1429,6 @@ body.is-push-bar-full {
 }
 .in-chat ul li span {
 	font-size: 18px;
-	font-family: robotoregular;
 }
 .in-chat ul li span:first-child {}
 .in-chat ul li span:last-child {}
@@ -1503,210 +1491,7 @@ body.is-push-bar-full {
 	border-width: 0 10px 20px 0;
 	border-color: transparent #c1f7d2;
 }
-/* Event */
-.in-event {
-	padding: 0;
-	position: relative;
-	overflow: hidden;
-}
-.in-event > img {
-	min-height: 100%;
-	left: 50%;
-	-webkit-transform: translate(-50%);
-	-ms-transform: translate(-50%);
-	transform: translate(-50%);
-	min-width: 100%;
-	position: absolute;
-}
-.in-event .event-box {
-	padding: 128px 185px 0 199px;
-}
-.post-striped .in-event .event-box {
-	padding-bottom: 60px;
-}
-.in-event .event-box .event-date {
-	width: 140px;
-	height: 140px;
-	border: solid 3px #fff;
-	color: #fff;
-	text-align: center;
-	float: left;
-	padding-top: 13px;
-}
-.in-event .event-box .event-date .date-day {
-	font: normal 91px/1 robotolight;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-}
-.in-event .event-box .event-date .date-month {
-	font: normal 15px/1 robotolight;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-}
-.in-event .event-box .event-detail {
-	padding-left: 200px;
-}
-.in-event .event-box .event-detail h5 {
-	color: #fff;
-	font: normal 32px/37px robotolight;
-	margin-top: 28px;
-	margin-bottom: 10px;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-}
-.in-event .event-box .event-detail h6 {
-	font: normal 22px/1 robotolight;
-	color: #fff;
-	margin-bottom: 31px;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-}
-.in-event .event-box .event-detail > h5 + span {
-	margin-top: 54px;
-}
-.in-event .event-box .event-detail > span {
-	font: normal 15px/1 robotolight;
-	color: #fff;
-	display: block;
-	margin-bottom:15px;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-	text-transform: uppercase;
-	margin-top: 30px;
-}
-.in-event .event-box .event-detail > span i {
-	float: right;
-	width: 80%;
-	height: 1px;
-	background-color: #fff;
-	margin-top: 8px;
-}
-.in-event .event-box .event-detail ul {
-	list-style-type: none;
-	padding-left: 0;
-	margin-bottom: 35px;
-	display: block;
-	width: 100%;
-	float: left;
-}
-.in-event .event-box .event-detail ul li {
-	font: normal 21px/1 robotolight;
-	color: #fff;
-	margin-bottom: 14px;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-}
-.in-event .event-box .event-detail ul li span {}
-.in-event .event-box .event-detail ul li span.event-list-date {
-	font-size: 22px;
-	width: 210px;
-	display: inline-block;
-	float: left;
-	line-height: 28px;
-}
-.in-event .event-box .event-detail ul li span.event-list-detail {
-	font-size: 22px;
-	line-height: 28px;
-}
-.in-event .event-box .event-detail ul li span.event-list-date + span.event-list-detail {
-	padding-left: 210px;
-	display: block;
-}
-.in-event .event-box .event-detail .event-more {
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, .25);
-	width: 205px;
-	height: 62px;
-	border: solid 2px #fff;
-	display: inline-block;
-	line-height: 58px;
-	text-align: center;
-	color: #fff;
-	font-size: 16px;
-}
-.in-event .event-box .event-detail .event-more:hover {
-	text-decoration: none;
-	background-color: #fff;
-	color: #000000; /* old: #a28671 */
-	text-shadow: none;
-}
-/* Tweet */
-.in-tweet {
-	position: relative;
-	overflow: hidden;
-}
-.in-tweet > img {
-	min-height: 100%;
-	left: 50%;
-	-webkit-transform: translate(-50%);
-	-ms-transform: translate(-50%);
-	transform: translate(-50%);
-	min-width: 100%;
-	position: absolute;
-}
-.in-tweet .overlay-tweet {
-	padding: 77px 104px 50px;
-	position: relative;
-}
-.in-tweet .overlay-tweet > iframe {
-	position: absolute !important;
-	right: 104px;
-	top: 77px;
-}
-.post-medium-vertical .in-tweet .overlay-tweet > iframe {
-	right: 41px;
-	top: 39px;
-}
-.in-tweet .media {
-	margin-top: 0;
-}
-.in-tweet .media-object {
-	float: left;
-	margin-right: 28px;
-}
-.in-tweet .media-body {
-	padding-top: 26px;
-}
-.in-tweet .media-heading {
-	font-size: 26px;
-	margin-bottom: -2px;
-}
-.in-tweet .media-body p {
-	font-size: 16px;
-	color: #000000; /* old: #a28671 */
-}
-.in-tweet .media-text {
-	font-size: 23px;
-	font-family: robotolight;
-	padding-top: 17px;
-	line-height: 30px;
-	padding-bottom: 16px;
-	color: #4d4d4f;
-}
-.in-tweet .tweet-date {
-	text-align: left;
-	color: #909091;
-	font-size: 15px;
-	font-family: robotoregular;
-}
-.in-tweet .tweet-infos {
-	border-top: solid 1px #d9d9d8;
-	padding-top: 25px;
-	margin-top: 36px;
-}
-.in-tweet .tweet-infos p {
-	float: left;
-	font-family: robotolight;
-	font-size: 13px;
-	color: #b3b3b1;
-}
-.in-tweet .tweet-infos p b {
-	font-family: robotoregular;
-}
-.in-tweet .tweet-infos .icons {
-	float: right;
-}
-.in-tweet .tweet-infos .icons i {}
-.tweet-infos .icons a {
-	color: #b3b3b1;
-	margin-right: 10px;
-}
-.tweet-infos .icons a:hover {
-	color: #000000; /* old: #a28671 */
-}
+
 /* Embed in Post */
 .post-embed {
 	width: 100%;
@@ -2315,7 +2100,6 @@ body.is-push-bar-full {
 	padding-left: 159px;
 }
 .post-medium-vertical .in-event .event-box .event-detail h5 {
-	font: 30px robotolight;
 	margin-top: 19px;
 	margin-bottom: 57px;
 }
@@ -2364,12 +2148,8 @@ body.is-push-bar-full {
 }
 .post-medium-vertical .tweet-infos p {
 	float: left;
-	font-family: robotolight;
 	font-size: 13px;
 	color: #b3b3b1;
-}
-.post-medium-vertical .tweet-infos p b {
-	font-family: robotoregular;
 }
 .post-medium-vertical .tweet-infos .icons {
 	float: right;
@@ -2477,7 +2257,7 @@ body.is-push-bar-full {
 	color: #fff;
 	text-align: center;
 	padding:85px 0;
-	font-family: Raleway;
+	font-family: Noto Sans;
 }
 a.medium-date:hover {
 	background-color: #6d6d71;
@@ -2512,7 +2292,7 @@ a.medium-date:hover {
 	height: auto;
 }
 .medium-quote p.medium-quote-by {
-	font-family: Raleway;
+	font-family: Noto Sans;
 	color: #000000; /* old: #a28671 */
 	font-size: 16px;
 	height: auto;
@@ -2610,7 +2390,7 @@ a.medium-date:hover {
 }
 .medium-event .medium-event-date {
 	color: #fff;
-	font-family: Raleway;
+	font-family: Noto Sans;
 	font-size: 118px;
 	line-height: 118px;
 	padding-top: 0.5em;
@@ -2668,7 +2448,6 @@ a.medium-date:hover {
 	clear: left;
 	text-align: left;
 	padding: 0 30px 27px;
-	font-family: robotolight;
 	font-size: 20px;
 	color: #626264;
 }
@@ -2677,7 +2456,6 @@ a.medium-date:hover {
 	text-align: left;
 	color: #909091;
 	font-size: 15px;
-	font-family: robotoregular;
 }
 .medium-review {
 	position: absolute;
@@ -2702,7 +2480,7 @@ a.medium-date:hover {
 }
 .medium-post-box p.hotnews {
 	color: #000000; /* old: #a28671 */
-	font-family: Raleway;
+	font-family: Noto Sans;
 	font-weight: 300;
 	font-size: 28px;
 	line-height: 36px;
@@ -2962,6 +2740,7 @@ a.medium-date:hover {
 	border-right:1px solid #E5E5E5;
 	border-left:1px solid #E5E5E5;
 	border-bottom:1px solid #E5E5E5;
+	cursor: pointer;
 /*	box-shadow: 0 0 3px 0 rgba(228, 228, 228, 1);
 	-webkit-box-shadow: 0 0 3px 0 rgba(228, 228, 228, 1);*/
 }
@@ -3051,9 +2830,9 @@ a.medium-date:hover {
 	margin-bottom: 7px;
 	display: inline-block;
 	color: #000000; /* old: #787878 */
-	font-size: 14px;
+	font-size: 15px;
 	padding-top: 0;
-	font-weight: 400;
+	font-weight: 200;
 	line-height: 22px;
 	height: 66px;
 }
@@ -3176,35 +2955,7 @@ a.medium-date:hover {
 	color: #000000; /* old: #a28671 */
 	font-size: 42px;
 }
-.masonry-fb {
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	text-align: center;
-}
-.masonry-fb .masonry-fb-name {
-	font-family: robotolight;
-	color: #fff;
-	padding-top: 29%;
-	font-size: 23px;
-	line-height: 39px;
-}
-.masonry-fb .masonry-fb-name b {
-	font-family: robotoregular;
-	font-weight: 400;
-	font-size: 14px;
-}
-.masonry-fb .masonry-fb-link {
-	color: #fff;
-	padding-top: 25px;
-}
-.masonry-fb .masonry-fb-link i {
-	font-size: 48px;
-	vertical-align: middle;
-	margin-right: 8px;
-}
+
 .masonry-box .links {
 	position: absolute;
 	top: 20px;
@@ -3226,90 +2977,7 @@ a.medium-date:hover {
 .masonry-box .links a:hover {
 	text-decoration: none;
 }
-/* Tweet Style */
-.tweets-infos {
-	border-top: solid 1px #e5e5e5;
-	position: absolute;
-	bottom: 5px;
-	left: 30px;
-	right: 30px;
-	padding-top: 11px;
-	margin-top: 15px;
-}
-.tweets-infos p { float: left;
-	font-family: robotolight;
-	font-size: 13px;
-	color: #b3b3b1;
-}
-.tweets-infos p b {
-	font-family: robotoregular;
-}
-.tweets-infos .icons {
-	float: right;
-}
-.tweets-infos .icons a {
-	color: #b3b3b1;
-	margin-right: 10px;
-}
-.tweets-infos .icons a:hover {
-	color: #000000; /* old: #a28671 */
-	text-decoration: none;
-}
-.comments {
-	display: none;
-	background-color: #f9f9f9;
-	padding: 25px;
-	border:solid 1px #e5e5e5;
-	border-top-width: 2px;
-	margin:28px -29px -28px;
-}
-.comments.is-expand {
-	display: block;
-}
-.comments .media-heading {
-	font-size: 13px;
-	color: #000000; /* old: #a28671 */
-	line-height: 1;
-	margin-bottom: 0;
-}
-.comments .date {
-	font-size: 13px;
-	color: #666666; /* old: #a9a9a9 */
-}
-.comments .comment-detail {
-	color: #000000; /* old: #787878 */
-	font-size: 13px;
-	line-height: 20px;
-}
-.comments .media-body {
-	border-bottom:solid 1px #e5e5e5;
-}
-.comments .media:last-child .media-body {
-	border-bottom-width: 0;
-	width: 272px;
-}
-.comments .media-body textarea {
-	border:solid 1px #e5e5e5;
-	width: 100%;
-	height: 64px;
-	line-height: 33px;
-	padding: 2px 6px 0;
-	color: #666666; /* old: #a9a9a9 */
-	font-size: 13px;
-	-webkit-appearance: none;
-	border-radius: 0;
-	line-height: 20px;
-	resize: none;
-	-webkit-transition: all .3s ease-in-out;
-	-moz-transition: all .3s ease-in-out;
-	-ms-transition: all .3s ease-in-out;
-	-o-transition: all .3s ease-in-out;
-	transition: all .3s ease-in-out;
-}
-.comments .media-body textarea:focus {
-	border-color: #747474;
-	color: #000000; /* old: 3d3d3f */
-}
+
 input:focus, button:focus, select:focus, textarea:focus {
 	outline: none;
 }
@@ -7092,13 +6760,15 @@ body .qr-black-theme,
 	border-left: solid 2px #b3b3b1;
 	padding-top: 0;
 	margin-top:5px;
-	margin-left:10%;
-	margin-right:10%;
+	/*margin-left:10%;*/
+	margin-left: 0%;
+	margin-right:5%;
 }
 .post-item-paragraph blockquote p {
-	font-size: 20px;
+	font-family:  Noto Serif;
+	font-size: 23px;
 	color: #000000; /* old: #a28671 */
-	line-height: 36px;
+	line-height: 37px;
 	font-weight: 300;
 }
 .post-item-paragraph blockquote p i {
@@ -7924,22 +7594,7 @@ i.roman {
 	color:#FFFFFF;
 	text-align:right;
 }
-.laread-motto {
-	color: #a8a8a8;
-	font-size: 18px;
-	margin-bottom: 70px;
-	font-family: 'Roboto Slab', serif;
-}
-.laread-social {}
-.laread-social a {
-	color: #fff;
-	margin: 0 10px;
-	font-size: 25px;
-}
-.laread-social a:hover {
-	text-decoration: none;
-	color: #000000; /* old: #a28671 */
-}
+
 .baseline-post-nav + .footer {
 	margin-top: 0;
 }
