@@ -90,9 +90,9 @@ html {
 }
 body {
 	height: 100%;
-	font-family: Noto Sans;
+	font-family: Roboto;
 	color:#000000; /* old: 3d3d3f */
-	font-size: 14px;
+	font-size: 1.15rem;
 	-webkit-font-smoothing: subpixel-antialiased;
 	-webkit-font-smoothing : antialiased;
 	-moz-font-smoothing : antialiased;
@@ -133,7 +133,7 @@ p, .post-item-paragraph {
 }
 .lead-text {
 	font-size: 22px;
-	font-weight: 300;
+	font-weight: 400;
 }
 h1, h2, h3, h4, h5, h6 { line-height: 24px; color: #000000; } /* old: 3d3d3f */
 h1 { font-size: 28px; font-weight: 400; }
@@ -723,7 +723,7 @@ body.is-push-bar-full {
 	border-radius: 16px;
 	float: left;
 	font-style: normal;
-	font-weight: 300;
+	font-weight: 400;
 }
 .navmenu-default .post-title-list li h5 a {
 	color: #000000; /* old: 3d3d3f */
@@ -847,7 +847,7 @@ body.is-push-bar-full {
 	line-height: 32px;
 	padding-top: 5px;
 	font-size: 26px;
-	font-weight: 300;
+	font-weight: 400;
 	-webkit-transition: color .3s ease;
 	-moz-transition: color .3s ease;
 	-ms-transition: color .3s ease;
@@ -1073,7 +1073,7 @@ body.is-push-bar-full {
 	text-align: left;
 	line-height: 26px;
 	margin-bottom: 20px;
-	font-weight: 200;
+	font-weight: 400;
 }
 
 .post-item-paragraph ul,
@@ -1356,7 +1356,7 @@ body.is-push-bar-full {
 	color: #fff;
 	font-size: 18px;
 	line-height: 24px;
-	font-weight: 300;
+	font-weight: 400;
 	margin-bottom: 30px;
 }
 .in-aside .overlay-aside p {
@@ -2215,7 +2215,7 @@ body.is-push-bar-full {
 }
 .post-mediums .post-item-paragraph h2 a {
 	color: inherit;
-	font-weight: 300;
+	font-weight: 400;
 }
 .post-mediums .post-item-paragraph p {
 	margin-bottom: 0;
@@ -2257,7 +2257,7 @@ body.is-push-bar-full {
 	color: #fff;
 	text-align: center;
 	padding:85px 0;
-	font-family: Noto Sans;
+	font-family: Roboto;
 }
 a.medium-date:hover {
 	background-color: #6d6d71;
@@ -2292,7 +2292,7 @@ a.medium-date:hover {
 	height: auto;
 }
 .medium-quote p.medium-quote-by {
-	font-family: Noto Sans;
+	font-family: Roboto;
 	color: #000000; /* old: #a28671 */
 	font-size: 16px;
 	height: auto;
@@ -2368,14 +2368,14 @@ a.medium-date:hover {
 }
 .medium-code .code-spot {
 	font-size: 67px;
-	font-weight: 200;
+	font-weight: 400;
 	padding-top: 22%;
 	line-height: 1;
 	padding-bottom: 1px;
 }
 .medium-code .code-info {
 	font-size: 18px;
-	font-weight: 200;
+	font-weight: 400;
 }
 .medium-code .code-info b {
 	font-weight: 400;
@@ -2390,8 +2390,8 @@ a.medium-date:hover {
 }
 .medium-event .medium-event-date {
 	color: #fff;
-	font-family: Noto Sans;
-	font-size: 118px;
+	font-family: Roboto;
+	font-size: 24px;
 	line-height: 118px;
 	padding-top: 0.5em;
 	margin-bottom: 18px;
@@ -2480,9 +2480,9 @@ a.medium-date:hover {
 }
 .medium-post-box p.hotnews {
 	color: #000000; /* old: #a28671 */
-	font-family: Noto Sans;
-	font-weight: 300;
-	font-size: 28px;
+	font-family: Roboto;
+	font-weight: 400;
+	font-size: 16px;
 	line-height: 36px;
 	height: auto;
 	margin-top: 25px;
@@ -2832,7 +2832,7 @@ a.medium-date:hover {
 	color: #000000; /* old: #787878 */
 	font-size: 15px;
 	padding-top: 0;
-	font-weight: 200;
+	font-weight: 400;
 	line-height: 22px;
 	height: 66px;
 }
@@ -2878,7 +2878,7 @@ a.medium-date:hover {
 	font-size: 24px;
 	font-family: 'Muli', sans-serif;
 	line-height: 32px;
-	font-weight: 300;
+	font-weight: 400;
 	padding: 0 15px;
 	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55);
 }
@@ -3040,7 +3040,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 .archive-h1 {
 	font-size: 38px;
 	color: #000000; /* old: #a28671 */
-	font-weight: 300;
+	font-weight: 400;
 	margin-bottom: 23px;
 }
 .author-lead {
@@ -3050,7 +3050,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 .author-item .author-subdetail h2 {
 	margin-top: 0;
 	font-size: 28px;
-	font-weight: 300;
+	font-weight: 400;
 	margin-bottom: 8px;
 }
 .author-item .author-subdetail h2 a {
@@ -3121,7 +3121,7 @@ input:focus, button:focus, select:focus, textarea:focus {
 .laread-author-detail .author-subdetail h2 {
 	font-size: 28px;
 	color: #000000; /* old: #a28671 */
-	font-weight: 300;
+	font-weight: 400;
 	margin-bottom: 15px;
 }
 .laread-author-detail .author-subdetail .info-small {
@@ -4349,7 +4349,7 @@ a.text-contact:hover,
 }
 .banner-mod .carousel-caption-3 .article-info {
 	font-size: 17px;
-	font-weight: 200;
+	font-weight: 400;
 	line-height: 1;
 	text-shadow: none;
 	color: #fff;
@@ -6062,7 +6062,7 @@ body .qr-black-theme,
 .gallery-h1 {
 	font-size: 38px;
 	color: #000000; /* old: #a28671 */
-	font-weight: 300;
+	font-weight: 400;
 	margin-bottom: 36px;
 }
 .gallery-lead {
@@ -6112,7 +6112,7 @@ body .qr-black-theme,
 	margin-bottom: 4px;
 	display: block;
 	line-height: 22px;
-	font-weight: 300;
+	font-weight: 400;
 }
 .gallery-large-item:hover {
 	text-decoration: none;
@@ -6476,7 +6476,7 @@ body .qr-black-theme,
 	color: #fff;
 	background-color: #6d6d71;
 	text-align: center;
-	font-weight: 200;
+	font-weight: 400;
 	height: 181px;
 }
 /* v3 */
@@ -6766,13 +6766,13 @@ body .qr-black-theme,
 }
 .post-item-paragraph blockquote p {
 	font-family:  Noto Serif;
-	font-size: 23px;
+	font-size: 24px;
 	color: #000000; /* old: #a28671 */
-	line-height: 37px;
-	font-weight: 300;
+	line-height: 34px;
+	font-weight: 400;
 }
 .post-item-paragraph blockquote p i {
-	font-weight: 300;
+	font-weight: 400;
 }
 .post-item-paragraph blockquote p span {
 	font-weight: 400;
@@ -6793,7 +6793,7 @@ p.quote-inline > i {
 p.quote-inline .center-quote {
 	color: #000000; /* old: #A28671 */
 	font-size: 24px;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 40px;
 }
 p.quote-inline .quote-name {
@@ -9000,7 +9000,7 @@ i.roman {
 		padding-bottom: 15px;
 	}
 	.in-hotnews a.hotnews-link .hotnews-title {
-		font-weight: 300;
+		font-weight: 400;
 	}
 
 	.medium-link > i {
