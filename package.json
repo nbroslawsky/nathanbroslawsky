@@ -13,7 +13,7 @@
     "express-handlebars": "^3.0.0",
     "feed": "^4.0.0",
     "marked": "^1.1.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "node-cache": "^5.1.2",
     "sanitize-html": "^2.3.2",
     "serve-favicon": "^2.5.0",
