@@ -104,6 +104,11 @@ app.get('/blog', function (req, res, next) {
 
 app.get('/blog/:slug', function (req, res, next) {
 
+  res.redirect(301, "/p/" + req.params.slug)
+})
+
+app.get('/p/:slug', function (req, res, next) {
+
   Promise.all([
       dataCalls.story(req.params.slug),
       dataCalls.getPrevStory(req.params.slug),
